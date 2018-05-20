@@ -5,6 +5,7 @@ drwxr-xr-x	root/root	usr/include/libnftnl/
 -rw-r--r--	root/root	usr/include/libnftnl/chain.h
 -rw-r--r--	root/root	usr/include/libnftnl/common.h
 -rw-r--r--	root/root	usr/include/libnftnl/expr.h
+-rw-r--r--	root/root	usr/include/libnftnl/flowtable.h
 -rw-r--r--	root/root	usr/include/libnftnl/gen.h
 -rw-r--r--	root/root	usr/include/libnftnl/object.h
 -rw-r--r--	root/root	usr/include/libnftnl/rule.h
@@ -15,8 +16,8 @@ drwxr-xr-x	root/root	usr/include/libnftnl/
 -rw-r--r--	root/root	usr/include/libnftnl/udata.h
 drwxr-xr-x	root/root	usr/lib/
 -rwxr-xr-x	root/root	usr/lib/libnftnl.la
--rwxr-xr-x	root/root	usr/lib/libnftnl.so.4.2.0
-lrwxrwxrwx	root/root	usr/lib/libnftnl.so.4 -> libnftnl.so.4.2.0
-lrwxrwxrwx	root/root	usr/lib/libnftnl.so -> libnftnl.so.4.2.0
+-rwxr-xr-x	root/root	usr/lib/libnftnl.so.7.2.0
+lrwxrwxrwx	root/root	usr/lib/libnftnl.so.7 -> libnftnl.so.7.2.0
+lrwxrwxrwx	root/root	usr/lib/libnftnl.so -> libnftnl.so.7.2.0
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/libnftnl.pc

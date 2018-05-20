@@ -1,7 +1,7 @@
 # Build files configuration
 
 # Set host system name
-HOST="armv7-rpi2-linux-gnueabi"
+HOST="armv8-rpi3-linux-gnueabi"
 
 # Make all cross builds depend on cross toolchain
 CROSS_DEPENDS=native/crosstool-ng
@@ -20,7 +20,7 @@ PATH="$NATIVE_SYSROOT/usr/bin:$PATH"
 JOBS=`cat /proc/cpuinfo | grep processor | wc -l`
 
 # Layer configuration
-LAYERS=(raspberrypi2 default)
+LAYERS=(raspberrypi3 default)
 
 # Pkg-config cross configuration
 if [ "$BUILD_TYPE" = "cross" ]; then

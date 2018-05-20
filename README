@@ -1,14 +1,14 @@
 Name:
 
-   Raspberry Pi 2 Mini Distribution
+   Raspberry Pi 3 Mini Distribution
 
 About:
 
-   A basic GNU/Linux distribution for the Raspberry Pi 2
+   A basic GNU/Linux distribution for the Raspberry Pi 3
 
 Main features:
 
-   * Arm Cortex A7, Neon, FPU optimized toolchain
+   * Arm Cortex A53, Neon, FPU optimized toolchain
    * Glibc C library
    * Systemd init system
    * GNU/Linux system utilities (no busybox)
@@ -30,14 +30,14 @@ Quick build guide:
    Note: Before building, please make sure that you have all required Ubuntu
          packages installed. See section "Build system requirements".
 
-   $ git clone --recursive git://github.com/mini-distribution/raspberrypi2.git
-   $ cd raspberrypi2
+   $ git clone --recursive git://github.com/mini-distribution/raspberrypi3.git
+   $ cd raspberrypi3
    $ buildgear build fs
    $ buildgear build rpi-firmware-boot
 
 Prebuilt images:
 
-    http://mini-distribution.io/prebuilds/raspberrypi2
+    http://mini-distribution.io/prebuilds/raspberrypi3 (To be done)
 
 Login details:
 
@@ -62,11 +62,12 @@ Build system requirements:
                           autoconf automake autopoint
 
 
-   Also requires reconfiguring "/bin/sh" to use bash:
+   Many software components fail to build using Ubuntus default dash shell so
+   we must reconfigure "/bin/sh" to use bash:
 
    $ sudo dpkg-reconfigure dash
 
-   Fact: Many software distributions fail to build using the dash shell.
+   Answer "no" to use dash.
 
 Known issues:
 

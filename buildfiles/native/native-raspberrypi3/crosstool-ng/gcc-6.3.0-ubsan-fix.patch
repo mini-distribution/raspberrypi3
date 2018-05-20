@@ -1,0 +1,16 @@
+diff -Nur a/patches/gcc/6.3.0/950-gcc-ubsan-fix.patch b/patches/gcc/6.3.0/950-gcc-ubsan-fix.patch
+--- a/patches/gcc/6.3.0/950-gcc-ubsan-fix.patch	1970-01-01 01:00:00.000000000 +0100
++++ b/patches/gcc/6.3.0/950-gcc-ubsan-fix.patch	2018-05-13 17:01:09.818616038 +0200
+@@ -0,0 +1,12 @@
++diff -Naur a/gcc/ubsan.c b/gcc/ubsan.c
++--- a/gcc/ubsan.c	2016-12-07 23:39:29.000000000 +0100
+++++ b/gcc/ubsan.c	2018-05-13 16:59:54.976388894 +0200
++@@ -1471,7 +1471,7 @@
++ 
++   expanded_location xloc = expand_location (loc);
++   if (xloc.file == NULL || strncmp (xloc.file, "\1", 2) == 0
++-      || xloc.file == '\0' || xloc.file[0] == '\xff'
+++      || xloc.file[0] == '\0' || xloc.file[0] == '\xff'
++       || xloc.file[1] == '\xff')
++     return false;
++ 

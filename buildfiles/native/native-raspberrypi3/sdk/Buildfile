@@ -1,0 +1,23 @@
+# Description: SDK
+# URL: 
+
+name=sdk
+version=1.0
+release=1
+depends=(native/crosstool-ng fs)
+options=(nostrip)
+
+build() {
+    mkdir $PKG/$name
+
+    # Copy fully populated sysroot
+    cp -a $SYSROOT/* $PKG/$name
+
+    # Cleanup
+    rm -rf $PKG/$name/share/local
+    rm -rf $PKG/$name/$HOST/sysroot/usr/{sbin,bin,man,share,etc}
+    rm -rf $PKG/$name/$HOST/sysroot/{lib/modules,var,media,mnt,opt,proc,root,run,bin,sbin,srv,sys,tmp,home,etc,dev}
+
+    # Create tarball
+    XZ_OPT="--threads=0" tar -C $PKG -acpf $OUTPUT/sdk.tar.xz .
+}

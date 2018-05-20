@@ -1,0 +1,19 @@
+# Description: Bootloader/GPU firmware for the Raspberry Pi series
+# URL: https://github.com/raspberrypi/firmware
+# License: BSD
+
+name=rpi-firmware-boot
+version=gita46b1f9
+release=1
+source=(http://mirror.mini-distribution.io/raspberrypi/$name-$version.tar.xz
+        cmdline.txt config.txt)
+
+build() {
+    cd $name-$version
+
+    mkdir -p $OUTPUT/boot
+    cp bootcode.bin $OUTPUT/boot
+    cp start.elf $OUTPUT/boot
+    cp $SRC/config.txt $OUTPUT/boot
+    cp $SRC/cmdline.txt $OUTPUT/boot
+}

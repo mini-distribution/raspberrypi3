@@ -1,0 +1,34 @@
+# Description: A library that provides a secure layer over a reliable transport layer
+# URL: http://www.gnu.org/software/gnutls
+# License: GPLv3 LGPLv2
+
+name=gnutls
+version=3.5.18
+release=1
+source=(https://www.gnupg.org/ftp/gcrypt/gnutls/v3.5/$name-$version.tar.xz)
+depends=(nettle)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr \
+               --disable-static \
+               --disable-guile \
+               --disable-nls \
+               --with-included-{libtasn1,unistring} \
+               --without-idn \
+               --disable-libdane \
+               --without-p11-kit \
+               --enable-local-libopts \
+               --disable-hardware-acceleration
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   rm -rf $PKG/usr/share/{info,locale}
+
+   # Fix libtool files
+   fix_la_files $PKG
+}

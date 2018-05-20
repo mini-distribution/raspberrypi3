@@ -1,0 +1,15 @@
+# Description: The Linux kernel
+# URL: http://www.kernel.org
+# License: GPLv2
+
+name=linux-source
+version=$KERNEL_VERSION
+release=1
+source=(http://mirror.mini-distribution.io/raspberrypi/linux-rpi-4.14.y-adb282c91b45.tar.xz)
+options=(nostrip)
+
+build()
+{
+    mkdir -p $PKG/usr/src
+    mv linux-rpi-4.14.y-adb282c91b45 $PKG/usr/src/linux
+}

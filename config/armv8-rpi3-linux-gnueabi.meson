@@ -1,0 +1,13 @@
+[binaries]
+c = 'armv8-rpi3-linux-gnueabi-cc'
+cpp = 'armv8-rpi3-linux-gnueabi-c++'
+ar = 'armv8-rpi3-linux-gnueabi-ar'
+ld = 'armv8-rpi3-linux-gnueabi-ld'
+strip = 'armv8-rpi3-linux-gnueabi-strip'
+pkgconfig = 'pkg-config'
+
+[host_machine]
+system = 'linux'
+cpu_family = 'arm'
+cpu = 'arm8'
+endian = 'little'

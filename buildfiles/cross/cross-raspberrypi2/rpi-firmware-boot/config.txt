@@ -1,2 +1,0 @@
-kernel=kernel7.img
-arm_freq=900

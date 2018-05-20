@@ -1,0 +1,38 @@
+# Description: A basic GNU/linux filesystem
+# URL: http://www.buildgear.org
+
+name=fs
+version=1.0
+release=1
+options=(nostrip)
+depends=(core
+         linux)
+
+build() {
+   # Copy fully populated sysroot
+   cp -a $SYSROOT/* $PKG
+
+   # Set host name
+   echo "rpi3" > $PKG/etc/hostname
+
+   # Set login issue
+   echo -e "Raspberry Pi 3 Mini Distribution $version\n" > $PKG/etc/issue
+
+   # Configure network interface
+   sed -i "s/NETWORK_INTERFACE_NAME/eth0/g" $PKG/etc/systemd/network/dhcp.network
+
+   # Allow SSH root login
+   sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/g" $PKG/etc/ssh/sshd_config
+
+   # Cleanup
+   cd $PKG/usr/include; rm -rf !(python|python?.?)
+   find $PKG/usr/lib -name '*.a'    -delete -o \
+                     -name '*.la'   -delete
+
+   # Create tarball
+   tar -C $PKG -Ipixz -cpf $OUTPUT/fs.tar.xz .
+}
+
+check() {
+   check_tool pixz "Available in Ubuntu package pixz"
+}

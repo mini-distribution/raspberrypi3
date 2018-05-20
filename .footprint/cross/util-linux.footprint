@@ -56,6 +56,7 @@ lrwxrwxrwx	root/root	usr/bin/uname26 -> setarch
 -rwxr-xr-x	root/root	usr/bin/unshare
 -rwxr-xr-x	root/root	usr/bin/utmpdump
 -rwxr-xr-x	root/root	usr/bin/uuidgen
+-rwxr-xr-x	root/root	usr/bin/uuidparse
 -rwxr-xr-x	root/root	usr/bin/wdctl
 -rwxr-xr-x	root/root	usr/bin/whereis
 -rwxr-sr-x	root/tty	usr/bin/write
@@ -102,6 +103,7 @@ drwxr-xr-x	root/root	usr/sbin/
 -rwxr-xr-x	root/root	usr/sbin/agetty
 -rwxr-xr-x	root/root	usr/sbin/blkdiscard
 -rwxr-xr-x	root/root	usr/sbin/blkid
+-rwxr-xr-x	root/root	usr/sbin/blkzone
 -rwxr-xr-x	root/root	usr/sbin/blockdev
 -rwxr-xr-x	root/root	usr/sbin/cfdisk
 -rwxr-xr-x	root/root	usr/sbin/chcpu
@@ -129,6 +131,7 @@ drwxr-xr-x	root/root	usr/sbin/
 -rwxr-xr-x	root/root	usr/sbin/raw
 -rwxr-xr-x	root/root	usr/sbin/readprofile
 -rwxr-xr-x	root/root	usr/sbin/resizepart
+-rwxr-xr-x	root/root	usr/sbin/rfkill
 -rwxr-xr-x	root/root	usr/sbin/rtcwake
 -rwxr-xr-x	root/root	usr/sbin/sfdisk
 -rwxr-xr-x	root/root	usr/sbin/sulogin
@@ -145,6 +148,7 @@ drwxr-xr-x	root/root	usr/share/bash-completion/completions/
 -rw-r--r--	root/root	usr/share/bash-completion/completions/addpart
 -rw-r--r--	root/root	usr/share/bash-completion/completions/blkdiscard
 -rw-r--r--	root/root	usr/share/bash-completion/completions/blkid
+-rw-r--r--	root/root	usr/share/bash-completion/completions/blkzone
 -rw-r--r--	root/root	usr/share/bash-completion/completions/blockdev
 -rw-r--r--	root/root	usr/share/bash-completion/completions/cal
 -rw-r--r--	root/root	usr/share/bash-completion/completions/cfdisk
@@ -211,6 +215,7 @@ drwxr-xr-x	root/root	usr/share/bash-completion/completions/
 -rw-r--r--	root/root	usr/share/bash-completion/completions/renice
 -rw-r--r--	root/root	usr/share/bash-completion/completions/resizepart
 -rw-r--r--	root/root	usr/share/bash-completion/completions/rev
+-rw-r--r--	root/root	usr/share/bash-completion/completions/rfkill
 -rw-r--r--	root/root	usr/share/bash-completion/completions/rtcwake
 -rw-r--r--	root/root	usr/share/bash-completion/completions/script
 -rw-r--r--	root/root	usr/share/bash-completion/completions/scriptreplay
@@ -228,6 +233,7 @@ drwxr-xr-x	root/root	usr/share/bash-completion/completions/
 -rw-r--r--	root/root	usr/share/bash-completion/completions/utmpdump
 -rw-r--r--	root/root	usr/share/bash-completion/completions/uuidd
 -rw-r--r--	root/root	usr/share/bash-completion/completions/uuidgen
+-rw-r--r--	root/root	usr/share/bash-completion/completions/uuidparse
 -rw-r--r--	root/root	usr/share/bash-completion/completions/wdctl
 -rw-r--r--	root/root	usr/share/bash-completion/completions/whereis
 -rw-r--r--	root/root	usr/share/bash-completion/completions/wipefs
@@ -284,6 +290,7 @@ drwxr-xr-x	root/root	usr/share/man/man1/
 -rw-r--r--	root/root	usr/share/man/man1/unshare.1
 -rw-r--r--	root/root	usr/share/man/man1/utmpdump.1
 -rw-r--r--	root/root	usr/share/man/man1/uuidgen.1
+-rw-r--r--	root/root	usr/share/man/man1/uuidparse.1
 -rw-r--r--	root/root	usr/share/man/man1/whereis.1
 -rw-r--r--	root/root	usr/share/man/man1/write.1
 drwxr-xr-x	root/root	usr/share/man/man3/
@@ -308,6 +315,7 @@ drwxr-xr-x	root/root	usr/share/man/man8/
 -rw-r--r--	root/root	usr/share/man/man8/agetty.8
 -rw-r--r--	root/root	usr/share/man/man8/blkdiscard.8
 -rw-r--r--	root/root	usr/share/man/man8/blkid.8
+-rw-r--r--	root/root	usr/share/man/man8/blkzone.8
 -rw-r--r--	root/root	usr/share/man/man8/blockdev.8
 -rw-r--r--	root/root	usr/share/man/man8/cfdisk.8
 -rw-r--r--	root/root	usr/share/man/man8/chcpu.8
@@ -344,6 +352,7 @@ drwxr-xr-x	root/root	usr/share/man/man8/
 -rw-r--r--	root/root	usr/share/man/man8/raw.8
 -rw-r--r--	root/root	usr/share/man/man8/readprofile.8
 -rw-r--r--	root/root	usr/share/man/man8/resizepart.8
+-rw-r--r--	root/root	usr/share/man/man8/rfkill.8
 -rw-r--r--	root/root	usr/share/man/man8/rtcwake.8
 -rw-r--r--	root/root	usr/share/man/man8/setarch.8
 -rw-r--r--	root/root	usr/share/man/man8/sfdisk.8

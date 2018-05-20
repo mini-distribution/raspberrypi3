@@ -1,3 +1,3 @@
 4f93aac6fecb7da2b92871bb9ee33032be6a87b174f54abf8ddf0911a22d29d2  libgpg-error-1.27.tar.bz2
 d3d5a2ee907b545f90f8d39d9a8df953d4e292fa827e304ffa77086b84c71329  libgpg-error-add-arm-cortex_a-syscfg.patch
-abc04231fa7c118cbc9bf6e2e54662dd4840622dcc3118cabc8570a09fabdde2  triplet-aliases.patch
+0c4c9565ddf4e8f81a74b8fba0ef8c8e36bcef143186f0a986ec101196717707  triplet-aliases.patch

@@ -1,0 +1,38 @@
+# Description: The Linux kernel
+# URL: http://www.kernel.org
+# License: GPLv2
+
+name=linux
+version=$KERNEL_VERSION
+release=1
+depends=(native/linux-source)
+
+build()
+{
+    cd $NATIVE_SYSROOT/usr/src/linux
+
+    export ARCH=arm
+    export CROSS_COMPILE=$HOST-
+    export KERNEL=kernel7
+
+    make bcm2709_defconfig
+    make -j $JOBS zImage modules dtbs
+    make INSTALL_MOD_PATH=$PKG modules_install
+
+    mkdir -p $OUTPUT/boot/overlays
+    cp arch/arm/boot/dts/*.dtb $OUTPUT/boot
+    cp arch/arm/boot/dts/overlays/*.dtb* $OUTPUT/boot/overlays/
+    cp arch/arm/boot/dts/overlays/README $OUTPUT/boot/overlays/
+    chmod +x scripts/mkknlimg
+    scripts/mkknlimg arch/arm/boot/zImage $OUTPUT/boot/$KERNEL.img
+
+    # Cleanup
+    rm $PKG/lib/modules/$version-v7/{build,source}
+}
+
+check()
+{
+   # Test for preinstalled tools
+   check_tool mkimage "Available in Ubuntu package u-boot-tools"
+   check_tool lzop "Available in Ubuntu package lzop"
+}
