@@ -7,6 +7,7 @@ drwxr-xr-x	root/root	etc/dbus-1/
 -rw-r--r--	root/root	etc/dbus-1/system.conf
 drwxr-xr-x	root/root	etc/default/
 -rw-r--r--	root/root	etc/default/useradd
+-rw-r--r--	root/root	etc/environment
 -rw-r--r--	root/root	etc/group
 -rw-r--r--	root/root	etc/hostname
 -rw-r--r--	root/root	etc/hosts.allow

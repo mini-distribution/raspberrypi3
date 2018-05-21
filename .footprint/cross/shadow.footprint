@@ -1,6 +1,7 @@
 drwxr-xr-x	root/root	etc/
 drwxr-xr-x	root/root	etc/default/
 -rw-r--r--	root/root	etc/default/useradd
+-rw-r--r--	root/root	etc/environment
 -rw-r--r--	root/root	etc/limits
 -rw-r--r--	root/root	etc/login.access
 -rw-r--r--	root/root	etc/login.defs
