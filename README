@@ -18,12 +18,8 @@ Main features:
 Main builds:
 
    fs                - Filesystem
-   linux             - Linux kernel
    rpi-firmware-boot - Bootloader firmware
-
-   Note: Bulding the filesystem automatically builds the linux kernel because
-         the kernel image is contained within the filesystem. Hence no explicit
-         build of the linux kernel is required.
+   sdk               - Software development kit
 
 Quick build guide:
 
