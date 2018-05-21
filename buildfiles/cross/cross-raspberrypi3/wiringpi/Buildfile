@@ -1,0 +1,29 @@
+# Description: GPIO Interface library for the Raspberry Pi
+# URL: http://wiringpi.com
+# License: LGPL-3.0+
+
+name=wiringpi
+version=2.46
+release=1
+source=(http://mirror.mini-distribution.io/raspberrypi/$name-$version.tar.xz
+       0001-Adjust-for-buildroot-build.patch
+       0002-wiringPi-wiringSerial-fix-compile-for-missing-baud-d.patch)
+
+build() {
+    cd $name-$version
+
+    patch -p1 -l -i $SRC/0001-Adjust-for-buildroot-build.patch
+    patch -p1 -i $SRC/0002-wiringPi-wiringSerial-fix-compile-for-missing-baud-d.patch
+
+    export CC=$HOST-gcc
+    
+    make -C wiringPi
+    make -C devLib
+    make -C gpio
+
+    make -C wiringPi DESTDIR=$PKG PREFIX=/usr LDCONFIG=true install
+    make -C devLib DESTDIR=$PKG PREFIX=/usr LDCONFIG=true install
+
+    install -D -m 0755 gpio/gpio $PKG/usr/bin/gpio
+    install -D -m 0755 gpio/pintest $PKG/usr/bin/pintest
+}

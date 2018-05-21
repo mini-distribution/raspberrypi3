@@ -6,7 +6,8 @@ version=1.0
 release=1
 options=(nostrip)
 depends=(core
-         linux)
+         linux
+         wiringpi)
 
 build() {
    # Copy fully populated sysroot
