@@ -43,6 +43,7 @@ drwxr-xr-x	root/root	etc/profile.d/
 -rw-r--r--	root/root	etc/profile.d/man
 -rw-r--r--	root/root	etc/profile.d/systemd
 -rw-r--r--	root/root	etc/shadow
+drwxr-xr-x	root/root	etc/skel/
 drwxr-xr-x	root/root	etc/ssh/
 -rw-r--r--	root/root	etc/ssh/moduli
 -rw-r--r--	root/root	etc/ssh/ssh_config
@@ -98,6 +99,7 @@ lrwxrwxrwx	root/root	etc/systemd/system/sysinit.target.wants/systemd-timesyncd.s
 drwxr-xr-x	root/root	etc/systemd/user/
 -rw-rw-r--	root/root	etc/systemd/user.conf
 drwxr-xr-x	root/root	etc/tmpfiles.d/
+-rw-r--r--	root/root	etc/ttytype
 drwxr-xr-x	root/root	etc/udev/
 drwxr-xr-x	root/root	etc/udev/hwdb.d/
 drwxr-xr-x	root/root	etc/udev/rules.d/
@@ -2027,18 +2029,18 @@ lrwxrwxrwx	root/root	usr/bin/captoinfo -> tic
 -r-xr-xr-x	root/root	usr/bin/catchsegv
 -rwxr-xr-x	root/root	usr/bin/catman
 -rwxr-xr-x	root/root	usr/bin/chacl
--rwxr-xr-x	root/root	usr/bin/chage
+-rwsr-xr-x	root/root	usr/bin/chage
 -rwxr-xr-x	root/root	usr/bin/chcon
 -rwxr-xr-x	root/root	usr/bin/checkmk
 -rwxr-xr-x	root/root	usr/bin/chem
--rwxr-xr-x	root/root	usr/bin/chfn
+-rwsr-xr-x	root/root	usr/bin/chfn
 -rwxr-xr-x	root/root	usr/bin/chgrp
 -rwxr-xr-x	root/root	usr/bin/chmem
 -rwxr-xr-x	root/root	usr/bin/chmod
 -rwxr-xr-x	root/root	usr/bin/chown
 -rwxr-xr-x	root/root	usr/bin/chroot
 -rwxr-xr-x	root/root	usr/bin/chrt
--rwxr-xr-x	root/root	usr/bin/chsh
+-rwsr-xr-x	root/root	usr/bin/chsh
 -rwxr-xr-x	root/root	usr/bin/chvt
 -rwxr-xr-x	root/root	usr/bin/cksum
 -rwxr-xr-x	root/root	usr/bin/clear
@@ -2080,7 +2082,7 @@ lrwxrwxrwx	root/root	usr/bin/depmod -> /usr/bin/kmod
 -rwxr-xr-x	root/root	usr/bin/eqn
 -rwxr-xr-x	root/root	usr/bin/eqn2graph
 -rwxr-xr-x	root/root	usr/bin/expand
--rwxr-xr-x	root/root	usr/bin/expiry
+-rwsr-xr-x	root/root	usr/bin/expiry
 -rwxr-xr-x	root/root	usr/bin/expr
 -rwxr-xr-x	root/root	usr/bin/factor
 -rwxr-xr-x	root/root	usr/bin/faillog
@@ -2124,7 +2126,7 @@ hr-xr-xr-x	root/root	usr/bin/getconf link to usr/libexec/getconf/XBS5_ILP32_OFF3
 -rwxr-xr-x	root/root	usr/bin/glib-mkenums
 -rwxr-xr-x	root/root	usr/bin/glilypond
 -rwxr-xr-x	root/root	usr/bin/gobject-query
--rwxr-xr-x	root/root	usr/bin/gpasswd
+-rwsr-xr-x	root/root	usr/bin/gpasswd
 -rwxr-xr-x	root/root	usr/bin/gperl
 -rwxr-xr-x	root/root	usr/bin/gpg-error
 -rwxr-xr-x	root/root	usr/bin/gpg-error-config
@@ -2252,7 +2254,9 @@ lrwxrwxrwx	root/root	usr/bin/modprobe -> /usr/bin/kmod
 -rwxr-xr-x	root/root	usr/bin/ncurses6-config
 -rwxr-xr-x	root/root	usr/bin/neqn
 -rwxr-xr-x	root/root	usr/bin/networkctl
--rwxr-xr-x	root/root	usr/bin/newgrp
+-rwsr-xr-x	root/root	usr/bin/newgidmap
+-rwsr-xr-x	root/root	usr/bin/newgrp
+-rwsr-xr-x	root/root	usr/bin/newuidmap
 -rwxr-xr-x	root/root	usr/bin/nice
 -rwxr-xr-x	root/root	usr/bin/nl
 -rwxr-xr-x	root/root	usr/bin/nohup
@@ -2263,7 +2267,7 @@ lrwxrwxrwx	root/root	usr/bin/modprobe -> /usr/bin/kmod
 -rwxr-xr-x	root/root	usr/bin/od
 -rwxr-xr-x	root/root	usr/bin/openssl
 -rwxr-xr-x	root/root	usr/bin/openvt
--rwxr-xr-x	root/root	usr/bin/passwd
+-rwsr-xr-x	root/root	usr/bin/passwd
 -rwxr-xr-x	root/root	usr/bin/paste
 -rwxr-xr-x	root/root	usr/bin/pathchk
 -r-xr-xr-x	root/root	usr/bin/pcprofiledump
@@ -2362,7 +2366,7 @@ lrwxrwxrwx	root/root	usr/bin/shutdown -> systemctl
 -rwxr-xr-x	root/root	usr/bin/stat
 -rwxr-xr-x	root/root	usr/bin/stdbuf
 -rwxr-xr-x	root/root	usr/bin/stty
--rwxr-xr-x	root/root	usr/bin/su
+-rwsr-xr-x	root/root	usr/bin/su
 -rwxr-xr-x	root/root	usr/bin/sum
 -rwxr-xr-x	root/root	usr/bin/sync
 -rwxr-xr-x	root/root	usr/bin/systemctl
@@ -2974,6 +2978,7 @@ lrwxrwxrwx	root/root	usr/lib/libnss_nis.so -> ../../lib/libnss_nis.so.2
 lrwxrwxrwx	root/root	usr/lib/libpanel.so.6 -> libpanel.so.6.0
 lrwxrwxrwx	root/root	usr/lib/libpanel.so -> libpanel.so.6
 -rw-r--r--	root/root	usr/lib/libpci.so.3.5.6
+lrwxrwxrwx	root/root	usr/lib/libpci.so.3 -> /usr/lib/libpci.so.3.5.6
 -rwxr-xr-x	root/root	usr/lib/libpcre16.so.0.2.10
 lrwxrwxrwx	root/root	usr/lib/libpcre16.so.0 -> libpcre16.so.0.2.10
 lrwxrwxrwx	root/root	usr/lib/libpcre16.so -> libpcre16.so.0.2.10
@@ -5517,7 +5522,9 @@ lrwxrwxrwx	root/root	usr/share/man/man1/mdc2.1ssl -> dgst.1ssl
 -rw-r--r--	root/root	usr/share/man/man1/ncurses6-config.1.gz
 -rw-r--r--	root/root	usr/share/man/man1/neqn.1
 -rw-r--r--	root/root	usr/share/man/man1/networkctl.1
+-rw-r--r--	root/root	usr/share/man/man1/newgidmap.1
 -rw-r--r--	root/root	usr/share/man/man1/newgrp.1
+-rw-r--r--	root/root	usr/share/man/man1/newuidmap.1
 -rw-r--r--	root/root	usr/share/man/man1/nroff.1
 -rw-r--r--	root/root	usr/share/man/man1/nsenter.1
 -rw-r--r--	root/root	usr/share/man/man1/nseq.1ssl
@@ -8827,6 +8834,8 @@ lrwxrwxrwx	root/root	usr/share/man/man5/host.deny.5.gz -> hosts_access.5.gz
 -rw-r--r--	root/root	usr/share/man/man5/ssh_config.5
 -rw-r--r--	root/root	usr/share/man/man5/sshd_config.5
 -rw-r--r--	root/root	usr/share/man/man5/suauth.5
+-rw-r--r--	root/root	usr/share/man/man5/subgid.5
+-rw-r--r--	root/root	usr/share/man/man5/subuid.5
 -rw-r--r--	root/root	usr/share/man/man5/sysctl.conf.5
 -rw-r--r--	root/root	usr/share/man/man5/sysctl.d.5
 -rw-r--r--	root/root	usr/share/man/man5/system.conf.d.5
@@ -8998,7 +9007,6 @@ drwxr-xr-x	root/root	usr/share/man/man8/
 -rw-r--r--	root/root	usr/share/man/man8/linux32.8
 -rw-r--r--	root/root	usr/share/man/man8/linux64.8
 -rw-r--r--	root/root	usr/share/man/man8/lnstat.8
--rw-r--r--	root/root	usr/share/man/man8/logoutd.8
 -rw-r--r--	root/root	usr/share/man/man8/losetup.8
 -rw-r--r--	root/root	usr/share/man/man8/lsblk.8
 -rw-r--r--	root/root	usr/share/man/man8/lslocks.8
