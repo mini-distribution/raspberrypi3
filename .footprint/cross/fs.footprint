@@ -29,6 +29,8 @@ drwxr-xr-x	root/root	etc/kernel/
 drwxr-xr-x	root/root	etc/kernel/install.d/
 -rw-r--r--	root/root	etc/ld.so.conf
 drwxr-xr-x	root/root	etc/ld.so.conf.d/
+drwxr-xr-x	root/root	etc/lighttpd/
+-rw-r--r--	root/root	etc/lighttpd/lighttpd.conf
 -rw-r--r--	root/root	etc/limits
 -rw-r--r--	root/root	etc/login.access
 -rw-r--r--	root/root	etc/login.defs
@@ -51,6 +53,7 @@ drwxr-xr-x	root/root	etc/ssh/
 -rw-r--r--	root/root	etc/ssh/sshd_config
 drwxr-xr-x	root/root	etc/ssl/
 drwxr-xr-x	root/root	etc/ssl/certs/
+-rw-------	root/root	etc/ssl/certs/lighttpd.pem
 drwxr-xr-x	root/root	etc/ssl/misc/
 -rwxr-xr-x	root/root	etc/ssl/misc/CA.pl
 -rwxr-xr-x	root/root	etc/ssl/misc/CA.sh
@@ -80,6 +83,7 @@ drwxr-xr-x	root/root	etc/systemd/system/dbus.target.wants/
 lrwxrwxrwx	root/root	etc/systemd/system/dbus.target.wants/dbus.socket -> ../dbus.socket
 drwxr-xr-x	root/root	etc/systemd/system/getty.target.wants/
 lrwxrwxrwx	root/root	etc/systemd/system/getty.target.wants/getty@tty1.service -> ../../../../usr/lib/systemd/system/getty@.service
+-rw-r--r--	root/root	etc/systemd/system/lighttpd.service
 drwxr-xr-x	root/root	etc/systemd/system/multi-user.target.wants/
 lrwxrwxrwx	root/root	etc/systemd/system/multi-user.target.wants/dbus.service -> ../dbus.service
 lrwxrwxrwx	root/root	etc/systemd/system/multi-user.target.wants/machines.target -> ../../../../usr/lib/systemd/system/machines.target
@@ -2005,6 +2009,7 @@ drwxr-xr-x	root/root	opt/
 drwxr-xr-x	root/root	proc/
 drwxr-xr-x	root/root	root/
 drwxr-xr-x	root/root	run/
+-rw-r--r--	root/root	run/lighttpd.pid
 lrwxrwxrwx	root/root	sbin -> usr/sbin
 drwxr-xr-x	root/root	srv/
 drwxr-xr-x	root/root	sys/
@@ -2023,7 +2028,18 @@ lrwxrwxrwx	root/root	usr/bin/awk -> gawk
 -rwxr-xr-x	root/root	usr/bin/basename
 -rwxr-xr-x	root/root	usr/bin/bash
 -r-xr-xr-x	root/root	usr/bin/bashbug
+lrwxrwxrwx	root/root	usr/bin/bunzip2 -> bzip2
 -rwxr-xr-x	root/root	usr/bin/busctl
+lrwxrwxrwx	root/root	usr/bin/bzcat -> bzip2
+lrwxrwxrwx	root/root	usr/bin/bzcmp -> bzdiff
+-rwxr-xr-x	root/root	usr/bin/bzdiff
+lrwxrwxrwx	root/root	usr/bin/bzegrep -> bzgrep
+lrwxrwxrwx	root/root	usr/bin/bzfgrep -> bzgrep
+-rwxr-xr-x	root/root	usr/bin/bzgrep
+-rwxr-xr-x	root/root	usr/bin/bzip2
+-rwxr-xr-x	root/root	usr/bin/bzip2recover
+lrwxrwxrwx	root/root	usr/bin/bzless -> bzmore
+-rwxr-xr-x	root/root	usr/bin/bzmore
 -rwxr-xr-x	root/root	usr/bin/cal
 lrwxrwxrwx	root/root	usr/bin/captoinfo -> tic
 -rwxr-xr-x	root/root	usr/bin/cat
@@ -2867,6 +2883,9 @@ lrwxrwxrwx	root/root	usr/lib/libattr.so -> libattr.so.1
 lrwxrwxrwx	root/root	usr/lib/libblkid.so.1 -> libblkid.so.1.1.0
 lrwxrwxrwx	root/root	usr/lib/libblkid.so -> libblkid.so.1.1.0
 lrwxrwxrwx	root/root	usr/lib/libBrokenLocale.so -> ../../lib/libBrokenLocale.so.1
+-rwxr-xr-x	root/root	usr/lib/libbz2.so.1.0.6
+lrwxrwxrwx	root/root	usr/lib/libbz2.so.1.0 -> libbz2.so.1.0.6
+lrwxrwxrwx	root/root	usr/lib/libbz2.so -> libbz2.so.1.0
 -rw-r--r--	root/root	usr/lib/libcap.so.2.25
 lrwxrwxrwx	root/root	usr/lib/libcap.so.2 -> libcap.so.2.25
 lrwxrwxrwx	root/root	usr/lib/libcap.so -> libcap.so.2
@@ -3044,6 +3063,41 @@ lrwxrwxrwx	root/root	usr/lib/libxtables.so -> libxtables.so.12.0.0
 -rwxr-xr-x	root/root	usr/lib/libz.so.1.2.11
 lrwxrwxrwx	root/root	usr/lib/libz.so.1 -> libz.so.1.2.11
 lrwxrwxrwx	root/root	usr/lib/libz.so -> libz.so.1.2.11
+drwxr-xr-x	root/root	usr/lib/lighttpd/
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_accesslog.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_access.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_alias.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_authn_file.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_auth.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_cgi.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_compress.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_deflate.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_dirlisting.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_evasive.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_evhost.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_expire.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_extforward.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_fastcgi.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_flv_streaming.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_indexfile.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_openssl.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_proxy.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_redirect.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_rewrite.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_rrdtool.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_scgi.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_secdownload.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_setenv.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_simple_vhost.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_ssi.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_staticfile.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_status.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_uploadprogress.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_userdir.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_usertrack.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_vhostdb.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_webdav.so
+-rwxr-xr-x	root/root	usr/lib/lighttpd/mod_wstunnel.so
 drwxr-xr-x	root/root	usr/lib/man-db/
 -rwxr-xr-x	root/root	usr/lib/man-db/libman-2.8.3.so
 -rwxr-xr-x	root/root	usr/lib/man-db/libmandb-2.8.3.so
@@ -3614,6 +3668,17 @@ drwxr-xr-x	root/root	usr/lib/xtables/
 -rwxr-xr-x	root/root	usr/lib/xtables/libxt_udp.so
 drwxr-xr-x	root/root	usr/man/
 drwxr-xr-x	root/root	usr/man/man1/
+lrwxrwxrwx	root/root	usr/man/man1/bunzip2.1 -> bzip2.1
+lrwxrwxrwx	root/root	usr/man/man1/bzcat.1 -> bzip2.1
+lrwxrwxrwx	root/root	usr/man/man1/bzcmp.1 -> bzdiff.1
+-rw-r--r--	root/root	usr/man/man1/bzdiff.1
+lrwxrwxrwx	root/root	usr/man/man1/bzegrep.1 -> bzgrep.1
+lrwxrwxrwx	root/root	usr/man/man1/bzfgrep.1 -> bzgrep.1
+-rw-r--r--	root/root	usr/man/man1/bzgrep.1
+-rw-r--r--	root/root	usr/man/man1/bzip2.1
+lrwxrwxrwx	root/root	usr/man/man1/bzip2recover.1 -> bzip2.1
+lrwxrwxrwx	root/root	usr/man/man1/bzless.1 -> bzmore.1
+-rw-r--r--	root/root	usr/man/man1/bzmore.1
 -rw-r--r--	root/root	usr/man/man1/systool.1
 drwxr-xr-x	root/root	usr/sbin/
 -rwxr-xr-x	root/root	usr/sbin/accessdb
@@ -3677,6 +3742,8 @@ lrwxrwxrwx	root/root	usr/sbin/iptables-translate -> xtables-compat-multi
 lrwxrwxrwx	root/root	usr/sbin/iptables -> xtables-multi
 -rwxr-xr-x	root/root	usr/sbin/ldattach
 -r-xr-xr-x	root/root	usr/sbin/ldconfig
+-rwxr-xr-x	root/root	usr/sbin/lighttpd
+-rwxr-xr-x	root/root	usr/sbin/lighttpd-angel
 -rwxr-xr-x	root/root	usr/sbin/lnstat
 -rwxr-xr-x	root/root	usr/sbin/losetup
 -rwxr-xr-x	root/root	usr/sbin/lspci
@@ -9011,6 +9078,8 @@ drwxr-xr-x	root/root	usr/share/man/man8/
 -rw-r--r--	root/root	usr/share/man/man8/libnss_mymachines.so.2.8
 -rw-r--r--	root/root	usr/share/man/man8/libnss_resolve.so.2.8
 -rw-r--r--	root/root	usr/share/man/man8/libnss_systemd.so.2.8
+-rw-r--r--	root/root	usr/share/man/man8/lighttpd.8
+-rw-r--r--	root/root	usr/share/man/man8/lighttpd-angel.8
 -rw-r--r--	root/root	usr/share/man/man8/linux32.8
 -rw-r--r--	root/root	usr/share/man/man8/linux64.8
 -rw-r--r--	root/root	usr/share/man/man8/lnstat.8
@@ -12084,3 +12153,6 @@ drwxr-xr-x	root/root	var/log/journal/
 -rw-r--r--	root/root	var/log/lastlog
 -rw-rw-r--	root/root	var/log/README
 lrwxrwxrwx	root/root	var/run -> ../run
+drwxr-xr-x	root/root	var/www/
+drwxr-xr-x	root/root	var/www/htdocs/
+drwxr-xr-x	root/root	var/www/logs/
