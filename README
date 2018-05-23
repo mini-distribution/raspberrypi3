@@ -15,6 +15,7 @@ Main features:
    * Ethernet network support
    * OpenSSH client/server
    * Lighttpd web-server with basic PHP
+   * i2c-tools
 
 Main builds:
 
