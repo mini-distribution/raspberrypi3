@@ -1,5 +1,6 @@
 drwxr-xr-x	root/root	etc/
 drwxr-xr-x	root/root	etc/lighttpd/
+drwxr-xr-x	root/root	etc/lighttpd/conf.d/
 -rw-r--r--	root/root	etc/lighttpd/lighttpd.conf
 drwxr-xr-x	root/root	etc/ssl/
 drwxr-xr-x	root/root	etc/ssl/certs/
