@@ -14,7 +14,7 @@ Main features:
    * GNU/Linux system utilities (no busybox)
    * Ethernet network support
    * OpenSSH client/server
-   * Lighttpd web-server
+   * Lighttpd web-server with basic PHP
 
 Main builds:
 
