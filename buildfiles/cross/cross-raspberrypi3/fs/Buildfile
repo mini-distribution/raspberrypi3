@@ -5,11 +5,13 @@ name=fs
 version=1.0
 release=1
 options=(nostrip)
+source=(modules-load.d.rpi3.conf)
 depends=(core
          linux
          wiringpi
          lighttpd
-         php)
+         php
+         i2c-tools)
 
 build() {
    # Copy fully populated sysroot
@@ -26,6 +28,9 @@ build() {
 
    # Allow SSH root login
    sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/g" $PKG/etc/ssh/sshd_config
+
+   # Help load kernel modules that don't load automatically
+   install -D -m 644 $SRC/modules-load.d.rpi3.conf $PKG/etc/modules-load.d/rpi3.conf
 
    # Cleanup
    cd $PKG/usr/include; rm -rf !(python|python?.?)
