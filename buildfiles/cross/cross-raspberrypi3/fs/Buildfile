@@ -29,6 +29,16 @@ build() {
    # Allow SSH root login
    sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/g" $PKG/etc/ssh/sshd_config
 
+   # Enable SSH server
+   ln -s /etc/systemd/system/sshd.socket \
+         $PKG/etc/systemd/system/sockets.target.wants/sshd.socket
+   ln -s /etc/systemd/system/sshdgenkeys.service \
+         $PKG/etc/systemd/system/multi-user.target.wants/sshdgenkeys.service
+
+   # Enable Lighttpd web server
+   ln -s /etc/systemd/system/lighttpd.service \
+         $PKG/etc/systemd/system/multi-user.target.wants/lighttpd.service
+
    # Help load kernel modules that don't load automatically
    install -D -m 644 $SRC/modules-load.d.rpi3.conf $PKG/etc/modules-load.d/rpi3.conf
 
