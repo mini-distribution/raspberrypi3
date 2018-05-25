@@ -1,7 +1,6 @@
 lrwxrwxrwx	root/root	bin -> usr/bin
 drwxr-xr-x	root/root	dev/
 drwxr-xr-x	root/root	etc/
--rw-r--r--	root/root	etc/group
 -rw-r--r--	root/root	etc/ld.so.conf
 drwxr-xr-x	root/root	etc/ld.so.conf.d/
 -rw-r--r--	root/root	etc/passwd
