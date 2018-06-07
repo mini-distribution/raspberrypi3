@@ -2,9 +2,13 @@ lrwxrwxrwx	root/root	bin -> usr/bin
 drwxr-xr-x	root/root	dev/
 drwxr-xr-x	root/root	etc/
 drwxr-xr-x	root/root	etc/binfmt.d/
+drwxr-xr-x	root/root	etc/conf.d/
+-rw-r--r--	root/root	etc/conf.d/rpcbind
 drwxr-xr-x	root/root	etc/dbus-1/
 -rw-r--r--	root/root	etc/dbus-1/session.conf
 -rw-r--r--	root/root	etc/dbus-1/system.conf
+drwxr-xr-x	root/root	etc/dbus-1/system.d/
+-rw-r--r--	root/root	etc/dbus-1/system.d/avahi-dbus.conf
 drwxr-xr-x	root/root	etc/default/
 -rw-r--r--	root/root	etc/default/useradd
 -rw-r--r--	root/root	etc/environment
@@ -40,6 +44,7 @@ drwxr-xr-x	root/root	etc/lighttpd/conf.d/
 drwxr-xr-x	root/root	etc/modules-load.d/
 -rw-r--r--	root/root	etc/modules-load.d/rpi3.conf
 lrwxrwxrwx	root/root	etc/mtab -> /proc/self/mounts
+-rw-r--r--	root/root	etc/netconfig
 drwxr-xr-x	root/root	etc/pam.d/
 -rw-r--r--	root/root	etc/pam.d/systemd-user
 -rw-r--r--	root/root	etc/passwd
@@ -47,6 +52,7 @@ drwxr-xr-x	root/root	etc/pam.d/
 drwxr-xr-x	root/root	etc/profile.d/
 -rw-r--r--	root/root	etc/profile.d/man
 -rw-r--r--	root/root	etc/profile.d/systemd
+-rw-r--r--	root/root	etc/services
 -rw-r--r--	root/root	etc/shadow
 drwxr-xr-x	root/root	etc/skel/
 drwxr-xr-x	root/root	etc/ssh/
@@ -76,7 +82,11 @@ drwxr-xr-x	root/root	etc/systemd/network/
 -rw-r--r--	root/root	etc/systemd/network/dhcp.network
 -rw-rw-r--	root/root	etc/systemd/resolved.conf
 drwxr-xr-x	root/root	etc/systemd/system/
+-rw-r--r--	root/root	etc/systemd/system/avahi-daemon.service
+-rw-r--r--	root/root	etc/systemd/system/avahi-daemon.socket
+-rw-r--r--	root/root	etc/systemd/system/avahi-dnsconfd.service
 -rw-rw-r--	root/root	etc/systemd/system.conf
+lrwxrwxrwx	root/root	etc/systemd/system/dbus-org.freedesktop.Avahi.service -> /etc/systemd/system/avahi-daemon.service
 lrwxrwxrwx	root/root	etc/systemd/system/dbus-org.freedesktop.network1.service -> ../../../usr/lib/systemd/system/systemd-networkd.service
 lrwxrwxrwx	root/root	etc/systemd/system/dbus-org.freedesktop.resolve1.service -> ../../../usr/lib/systemd/system/systemd-resolved.service
 -rw-r--r--	root/root	etc/systemd/system/dbus.service
@@ -85,6 +95,7 @@ drwxr-xr-x	root/root	etc/systemd/system/getty.target.wants/
 lrwxrwxrwx	root/root	etc/systemd/system/getty.target.wants/getty@tty1.service -> ../../../../usr/lib/systemd/system/getty@.service
 -rw-r--r--	root/root	etc/systemd/system/lighttpd.service
 drwxr-xr-x	root/root	etc/systemd/system/multi-user.target.wants/
+lrwxrwxrwx	root/root	etc/systemd/system/multi-user.target.wants/avahi-daemon.service -> /etc/systemd/system/avahi-daemon.service
 lrwxrwxrwx	root/root	etc/systemd/system/multi-user.target.wants/dbus.service -> ../dbus.service
 lrwxrwxrwx	root/root	etc/systemd/system/multi-user.target.wants/lighttpd.service -> /etc/systemd/system/lighttpd.service
 lrwxrwxrwx	root/root	etc/systemd/system/multi-user.target.wants/machines.target -> ../../../../usr/lib/systemd/system/machines.target
@@ -95,6 +106,7 @@ lrwxrwxrwx	root/root	etc/systemd/system/multi-user.target.wants/systemd-resolved
 drwxr-xr-x	root/root	etc/systemd/system/network-online.target.wants/
 lrwxrwxrwx	root/root	etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service -> ../../../../usr/lib/systemd/system/systemd-networkd-wait-online.service
 drwxr-xr-x	root/root	etc/systemd/system/sockets.target.wants/
+lrwxrwxrwx	root/root	etc/systemd/system/sockets.target.wants/avahi-daemon.socket -> /etc/systemd/system/avahi-daemon.socket
 lrwxrwxrwx	root/root	etc/systemd/system/sockets.target.wants/dbus.socket -> ../dbus.socket
 lrwxrwxrwx	root/root	etc/systemd/system/sockets.target.wants/sshd.socket -> /etc/systemd/system/sshd.socket
 lrwxrwxrwx	root/root	etc/systemd/system/sockets.target.wants/systemd-networkd.socket -> ../../../../usr/lib/systemd/system/systemd-networkd.socket
@@ -2022,6 +2034,15 @@ drwxr-xr-x	root/root	usr/bin/
 -rwxr-xr-x	root/root	usr/bin/[
 lrwxrwxrwx	root/root	usr/bin/apropos -> whatis
 -rwxr-xr-x	root/root	usr/bin/attr
+-rwxr-xr-x	root/root	usr/bin/avahi-browse
+lrwxrwxrwx	root/root	usr/bin/avahi-browse-domains -> avahi-browse
+-rwxr-xr-x	root/root	usr/bin/avahi-publish
+lrwxrwxrwx	root/root	usr/bin/avahi-publish-address -> avahi-publish
+lrwxrwxrwx	root/root	usr/bin/avahi-publish-service -> avahi-publish
+-rwxr-xr-x	root/root	usr/bin/avahi-resolve
+lrwxrwxrwx	root/root	usr/bin/avahi-resolve-address -> avahi-resolve
+lrwxrwxrwx	root/root	usr/bin/avahi-resolve-host-name -> avahi-resolve
+-rwxr-xr-x	root/root	usr/bin/avahi-set-host-name
 lrwxrwxrwx	root/root	usr/bin/awk -> gawk
 -rwxr-xr-x	root/root	usr/bin/b2sum
 -rwxr-xr-x	root/root	usr/bin/base32
@@ -2119,9 +2140,12 @@ lrwxrwxrwx	root/root	usr/bin/depmod -> /usr/bin/kmod
 -rwxr-xr-x	root/root	usr/bin/gapplication
 -rwxr-xr-x	root/root	usr/bin/gawk-4.2.1
 hrwxr-xr-x	root/root	usr/bin/gawk link to usr/bin/gawk-4.2.1
+-rwxr-xr-x	root/root	usr/bin/gcore
+-rwxr-xr-x	root/root	usr/bin/gdb
 -rwxr-xr-x	root/root	usr/bin/gdbm_dump
 -rwxr-xr-x	root/root	usr/bin/gdbm_load
 -rwxr-xr-x	root/root	usr/bin/gdbmtool
+-rwxr-xr-x	root/root	usr/bin/gdbserver
 -rwxr-xr-x	root/root	usr/bin/gdbus
 -rwxr-xr-x	root/root	usr/bin/gdbus-codegen
 -r-xr-xr-x	root/root	usr/bin/gencat
@@ -2309,7 +2333,9 @@ lrwxrwxrwx	root/root	usr/bin/reset -> tset
 -rwxr-xr-x	root/root	usr/bin/rm
 -rwxr-xr-x	root/root	usr/bin/rmdir
 lrwxrwxrwx	root/root	usr/bin/rmmod -> /usr/bin/kmod
+-rwxr-xr-x	root/root	usr/bin/rpcbind
 -r-xr-xr-x	root/root	usr/bin/rpcgen
+-rwxr-xr-x	root/root	usr/bin/rpcinfo
 -rwxr-xr-x	root/root	usr/bin/runcon
 lrwxrwxrwx	root/root	usr/bin/runlevel -> systemctl
 -rwxr-xr-x	root/root	usr/bin/scp
@@ -2452,6 +2478,14 @@ lrwxrwxrwx	root/root	usr/bin/xzfgrep -> xzgrep
 -rwxr-xr-x	root/root	usr/bin/xzmore
 -rwxr-xr-x	root/root	usr/bin/yes
 drwxr-xr-x	root/root	usr/etc/
+drwxr-xr-x	root/root	usr/etc/avahi/
+-rwxr-xr-x	root/root	usr/etc/avahi/avahi-autoipd.action
+-rw-r--r--	root/root	usr/etc/avahi/avahi-daemon.conf
+-rwxr-xr-x	root/root	usr/etc/avahi/avahi-dnsconfd.action
+-rw-r--r--	root/root	usr/etc/avahi/hosts
+drwxr-xr-x	root/root	usr/etc/avahi/services/
+-rw-r--r--	root/root	usr/etc/avahi/services/sftp-ssh.service
+-rw-r--r--	root/root	usr/etc/avahi/services/ssh.service
 -rw-r--r--	root/root	usr/etc/ethertypes
 drwxr-xr-x	root/root	usr/etc/profile.d/
 -rw-r--r--	root/root	usr/etc/profile.d/gawk.csh
@@ -2460,6 +2494,7 @@ drwxr-xr-x	root/root	usr/include/
 drwxr-xr-x	root/root	usr/lib/
 dr-xr-xr-x	root/root	usr/lib/audit/
 -r-xr-xr-x	root/root	usr/lib/audit/sotruss-lib.so
+drwxr-xr-x	root/root	usr/lib/avahi/
 drwxr-xr-x	root/root	usr/lib/awk/
 -rwxr-xr-x	root/root	usr/lib/awk/grcat
 -rwxr-xr-x	root/root	usr/lib/awk/pwcat
@@ -2818,6 +2853,21 @@ lrwxrwxrwx	root/root	usr/lib/libanl.so -> ../../lib/libanl.so.1
 -rw-r--r--	root/root	usr/lib/libattr.so.1.1.0
 lrwxrwxrwx	root/root	usr/lib/libattr.so.1 -> libattr.so.1.1.0
 lrwxrwxrwx	root/root	usr/lib/libattr.so -> libattr.so.1
+-rwxr-xr-x	root/root	usr/lib/libavahi-client.so.3.2.9
+lrwxrwxrwx	root/root	usr/lib/libavahi-client.so.3 -> libavahi-client.so.3.2.9
+lrwxrwxrwx	root/root	usr/lib/libavahi-client.so -> libavahi-client.so.3.2.9
+-rwxr-xr-x	root/root	usr/lib/libavahi-common.so.3.5.3
+lrwxrwxrwx	root/root	usr/lib/libavahi-common.so.3 -> libavahi-common.so.3.5.3
+lrwxrwxrwx	root/root	usr/lib/libavahi-common.so -> libavahi-common.so.3.5.3
+-rwxr-xr-x	root/root	usr/lib/libavahi-core.so.7.0.2
+lrwxrwxrwx	root/root	usr/lib/libavahi-core.so.7 -> libavahi-core.so.7.0.2
+lrwxrwxrwx	root/root	usr/lib/libavahi-core.so -> libavahi-core.so.7.0.2
+-rwxr-xr-x	root/root	usr/lib/libavahi-glib.so.1.0.2
+lrwxrwxrwx	root/root	usr/lib/libavahi-glib.so.1 -> libavahi-glib.so.1.0.2
+lrwxrwxrwx	root/root	usr/lib/libavahi-glib.so -> libavahi-glib.so.1.0.2
+-rwxr-xr-x	root/root	usr/lib/libavahi-gobject.so.0.0.5
+lrwxrwxrwx	root/root	usr/lib/libavahi-gobject.so.0 -> libavahi-gobject.so.0.0.5
+lrwxrwxrwx	root/root	usr/lib/libavahi-gobject.so -> libavahi-gobject.so.0.0.5
 -rwxr-xr-x	root/root	usr/lib/libblkid.so.1.1.0
 lrwxrwxrwx	root/root	usr/lib/libblkid.so.1 -> libblkid.so.1.1.0
 lrwxrwxrwx	root/root	usr/lib/libblkid.so -> libblkid.so.1.1.0
@@ -2836,6 +2886,9 @@ lrwxrwxrwx	root/root	usr/lib/libcrypto.so -> libcrypto.so.1.0.0
 lrwxrwxrwx	root/root	usr/lib/libcrypt.so -> ../../lib/libcrypt.so.1
 -r--r--r--	root/root	usr/lib/libc.so
 lrwxrwxrwx	root/root	usr/lib/libcurses.so -> libncurses.so.6.0
+-rwxr-xr-x	root/root	usr/lib/libdaemon.so.0.5.0
+lrwxrwxrwx	root/root	usr/lib/libdaemon.so.0 -> libdaemon.so.0.5.0
+lrwxrwxrwx	root/root	usr/lib/libdaemon.so -> libdaemon.so.0.5.0
 -rwxr-xr-x	root/root	usr/lib/libdbus-1.so.3.19.7
 lrwxrwxrwx	root/root	usr/lib/libdbus-1.so.3 -> libdbus-1.so.3.19.7
 lrwxrwxrwx	root/root	usr/lib/libdbus-1.so -> libdbus-1.so.3.19.7
@@ -2982,6 +3035,9 @@ lrwxrwxrwx	root/root	usr/lib/libthread_db.so -> ../../lib/libthread_db.so.1
 -rwxr-xr-x	root/root	usr/lib/libtinfo.so.6.0
 lrwxrwxrwx	root/root	usr/lib/libtinfo.so.6 -> libtinfo.so.6.0
 lrwxrwxrwx	root/root	usr/lib/libtinfo.so -> libtinfo.so.6
+-rwxr-xr-x	root/root	usr/lib/libtirpc.so.3.0.0
+lrwxrwxrwx	root/root	usr/lib/libtirpc.so.3 -> libtirpc.so.3.0.0
+lrwxrwxrwx	root/root	usr/lib/libtirpc.so -> libtirpc.so.3.0.0
 -rwxr-xr-x	root/root	usr/lib/libudev.so.1.6.10
 lrwxrwxrwx	root/root	usr/lib/libudev.so.1 -> libudev.so.1.6.10
 lrwxrwxrwx	root/root	usr/lib/libudev.so -> libudev.so.1
@@ -3068,6 +3124,10 @@ drwxr-xr-x	root/root	usr/lib/php/build/
 -rw-r--r--	root/root	usr/lib/php/build/scan_makefile_in.awk
 -rwxr-xr-x	root/root	usr/lib/php/build/shtool
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/avahi-client.pc
+-rw-r--r--	root/root	usr/lib/pkgconfig/avahi-core.pc
+-rw-r--r--	root/root	usr/lib/pkgconfig/avahi-glib.pc
+-rw-r--r--	root/root	usr/lib/pkgconfig/avahi-gobject.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/bash.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/blkid.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/check.pc
@@ -3084,6 +3144,7 @@ drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/gobject-2.0.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/gthread-2.0.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/libcrypto.pc
+-rw-r--r--	root/root	usr/lib/pkgconfig/libdaemon.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/libffi.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/libip4tc.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/libip6tc.pc
@@ -3103,6 +3164,7 @@ drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/libprocps.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/libssl.pc
 -rw-rw-r--	root/root	usr/lib/pkgconfig/libsystemd.pc
+-rw-r--r--	root/root	usr/lib/pkgconfig/libtirpc.pc
 -rw-rw-r--	root/root	usr/lib/pkgconfig/libudev.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/libusb-1.0.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/menu.pc
@@ -3270,6 +3332,8 @@ lrwxrwxrwx	root/root	usr/lib/systemd/system/remote-fs.target.wants/var-lib-machi
 -rw-rw-r--	root/root	usr/lib/systemd/system/rescue.target
 drwxr-xr-x	root/root	usr/lib/systemd/system/rescue.target.wants/
 lrwxrwxrwx	root/root	usr/lib/systemd/system/rescue.target.wants/systemd-update-utmp-runlevel.service -> ../systemd-update-utmp-runlevel.service
+-rw-r--r--	root/root	usr/lib/systemd/system/rpcbind.service
+-rw-r--r--	root/root	usr/lib/systemd/system/rpcbind.socket
 -rw-rw-r--	root/root	usr/lib/systemd/system/rpcbind.target
 lrwxrwxrwx	root/root	usr/lib/systemd/system/runlevel0.target -> poweroff.target
 lrwxrwxrwx	root/root	usr/lib/systemd/system/runlevel1.target -> rescue.target
@@ -3434,6 +3498,7 @@ drwxr-xr-x	root/root	usr/lib/systemd/user-preset/
 drwxr-xr-x	root/root	usr/lib/sysusers.d/
 -rw-rw-r--	root/root	usr/lib/sysusers.d/basic.conf
 -rw-r--r--	root/root	usr/lib/sysusers.d/dbus.conf
+-rw-r--r--	root/root	usr/lib/sysusers.d/rpcbind.conf
 -rw-r--r--	root/root	usr/lib/sysusers.d/systemd.conf
 drwxr-xr-x	root/root	usr/lib/tc/
 -rw-r--r--	root/root	usr/lib/tc/experimental.dist
@@ -3448,6 +3513,7 @@ drwxr-xr-x	root/root	usr/lib/tmpfiles.d/
 -rw-r--r--	root/root	usr/lib/tmpfiles.d/etc.conf
 -rw-rw-r--	root/root	usr/lib/tmpfiles.d/home.conf
 -rw-rw-r--	root/root	usr/lib/tmpfiles.d/journal-nocow.conf
+-rw-r--r--	root/root	usr/lib/tmpfiles.d/rpcbind.conf
 -rw-r--r--	root/root	usr/lib/tmpfiles.d/systemd.conf
 -rw-rw-r--	root/root	usr/lib/tmpfiles.d/systemd-nologin.conf
 -rw-rw-r--	root/root	usr/lib/tmpfiles.d/systemd-nspawn.conf
@@ -3651,6 +3717,9 @@ drwxr-xr-x	root/root	usr/sbin/
 -rwxr-xr-x	root/root	usr/sbin/agetty
 -rwxr-xr-x	root/root	usr/sbin/arping
 lrwxrwxrwx	root/root	usr/sbin/arptables-compat -> xtables-compat-multi
+-rwxr-xr-x	root/root	usr/sbin/avahi-autoipd
+-rwxr-xr-x	root/root	usr/sbin/avahi-daemon
+-rwxr-xr-x	root/root	usr/sbin/avahi-dnsconfd
 -rwxr-xr-x	root/root	usr/sbin/blkdiscard
 -rwxr-xr-x	root/root	usr/sbin/blkid
 -rwxr-xr-x	root/root	usr/sbin/blkzone
@@ -3782,6 +3851,8 @@ drwxr-xr-x	root/root	usr/share/aclocal/
 -rw-r--r--	root/root	usr/share/aclocal/gpg-error.m4
 -rw-r--r--	root/root	usr/share/aclocal/gsettings.m4
 -rw-r--r--	root/root	usr/share/aclocal/libgcrypt.m4
+drwxr-xr-x	root/root	usr/share/avahi/
+-rw-r--r--	root/root	usr/share/avahi/avahi-service.dtd
 drwxr-xr-x	root/root	usr/share/awk/
 -rw-r--r--	root/root	usr/share/awk/assert.awk
 -rw-r--r--	root/root	usr/share/awk/bits2str.awk
@@ -3941,6 +4012,16 @@ drwxr-xr-x	root/root	usr/share/common-lisp/source/gpg-error/
 -rw-r--r--	root/root	usr/share/common-lisp/source/gpg-error/gpg-error.lisp
 -rw-r--r--	root/root	usr/share/common-lisp/source/gpg-error/gpg-error-package.lisp
 drwxr-xr-x	root/root	usr/share/dbus-1/
+drwxr-xr-x	root/root	usr/share/dbus-1/interfaces/
+-rw-r--r--	root/root	usr/share/dbus-1/interfaces/org.freedesktop.Avahi.AddressResolver.xml
+-rw-r--r--	root/root	usr/share/dbus-1/interfaces/org.freedesktop.Avahi.DomainBrowser.xml
+-rw-r--r--	root/root	usr/share/dbus-1/interfaces/org.freedesktop.Avahi.EntryGroup.xml
+-rw-r--r--	root/root	usr/share/dbus-1/interfaces/org.freedesktop.Avahi.HostNameResolver.xml
+-rw-r--r--	root/root	usr/share/dbus-1/interfaces/org.freedesktop.Avahi.RecordBrowser.xml
+-rw-r--r--	root/root	usr/share/dbus-1/interfaces/org.freedesktop.Avahi.Server.xml
+-rw-r--r--	root/root	usr/share/dbus-1/interfaces/org.freedesktop.Avahi.ServiceBrowser.xml
+-rw-r--r--	root/root	usr/share/dbus-1/interfaces/org.freedesktop.Avahi.ServiceResolver.xml
+-rw-r--r--	root/root	usr/share/dbus-1/interfaces/org.freedesktop.Avahi.ServiceTypeBrowser.xml
 drwxr-xr-x	root/root	usr/share/dbus-1/services/
 lrwxrwxrwx	root/root	usr/share/dbus-1/services/org.freedesktop.systemd1.service -> ../system-services/org.freedesktop.systemd1.service
 -rw-r--r--	root/root	usr/share/dbus-1/session.conf
@@ -3956,6 +4037,7 @@ drwxr-xr-x	root/root	usr/share/dbus-1/system.d/
 -rw-rw-r--	root/root	usr/share/dbus-1/system.d/org.freedesktop.systemd1.conf
 -rw-rw-r--	root/root	usr/share/dbus-1/system.d/org.freedesktop.timedate1.conf
 drwxr-xr-x	root/root	usr/share/dbus-1/system-services/
+-rw-r--r--	root/root	usr/share/dbus-1/system-services/org.freedesktop.Avahi.service
 -rw-rw-r--	root/root	usr/share/dbus-1/system-services/org.freedesktop.hostname1.service
 -rw-rw-r--	root/root	usr/share/dbus-1/system-services/org.freedesktop.locale1.service
 -rw-rw-r--	root/root	usr/share/dbus-1/system-services/org.freedesktop.login1.service
@@ -3968,6 +4050,10 @@ drwxr-xr-x	root/root	usr/share/doc/
 drwxr-xr-x	root/root	usr/share/doc/expat/
 -rw-r--r--	root/root	usr/share/doc/expat/AUTHORS
 -rw-r--r--	root/root	usr/share/doc/expat/changelog
+drwxr-xr-x	root/root	usr/share/doc/libdaemon/
+-rw-r--r--	root/root	usr/share/doc/libdaemon/README
+-rw-r--r--	root/root	usr/share/doc/libdaemon/README.html
+-rw-r--r--	root/root	usr/share/doc/libdaemon/style.css
 drwxr-xr-x	root/root	usr/share/doc/nano/
 -rw-r--r--	root/root	usr/share/doc/nano/faq.html
 -rw-r--r--	root/root	usr/share/doc/nano/nano.1.html
@@ -3984,6 +4070,26 @@ drwxr-xr-x	root/root	usr/share/factory/etc/
 drwxrwxr-x	root/root	usr/share/factory/etc/pam.d/
 -rw-rw-r--	root/root	usr/share/factory/etc/pam.d/other
 -rw-rw-r--	root/root	usr/share/factory/etc/pam.d/system-auth
+drwxr-xr-x	root/root	usr/share/gdb/
+drwxr-xr-x	root/root	usr/share/gdb/syscalls/
+-rw-r--r--	root/root	usr/share/gdb/syscalls/aarch64-linux.xml
+-rw-r--r--	root/root	usr/share/gdb/syscalls/amd64-linux.xml
+-rw-r--r--	root/root	usr/share/gdb/syscalls/arm-linux.xml
+-rw-r--r--	root/root	usr/share/gdb/syscalls/freebsd.xml
+-rw-r--r--	root/root	usr/share/gdb/syscalls/gdb-syscalls.dtd
+-rw-r--r--	root/root	usr/share/gdb/syscalls/i386-linux.xml
+-rw-r--r--	root/root	usr/share/gdb/syscalls/mips-n32-linux.xml
+-rw-r--r--	root/root	usr/share/gdb/syscalls/mips-n64-linux.xml
+-rw-r--r--	root/root	usr/share/gdb/syscalls/mips-o32-linux.xml
+-rw-r--r--	root/root	usr/share/gdb/syscalls/ppc64-linux.xml
+-rw-r--r--	root/root	usr/share/gdb/syscalls/ppc-linux.xml
+-rw-r--r--	root/root	usr/share/gdb/syscalls/s390-linux.xml
+-rw-r--r--	root/root	usr/share/gdb/syscalls/s390x-linux.xml
+-rw-r--r--	root/root	usr/share/gdb/syscalls/sparc64-linux.xml
+-rw-r--r--	root/root	usr/share/gdb/syscalls/sparc-linux.xml
+drwxr-xr-x	root/root	usr/share/gdb/system-gdbinit/
+-rw-r--r--	root/root	usr/share/gdb/system-gdbinit/elinos.py
+-rw-r--r--	root/root	usr/share/gdb/system-gdbinit/wrs-linux.py
 drwxr-xr-x	root/root	usr/share/gettext/
 drwxr-xr-x	root/root	usr/share/gettext/its/
 -rw-r--r--	root/root	usr/share/gettext/its/gschema.its
@@ -4977,6 +5083,15 @@ drwxr-xr-x	root/root	usr/share/man/man1/
 -rw-r--r--	root/root	usr/share/man/man1/apropos.1
 -rw-r--r--	root/root	usr/share/man/man1/asn1parse.1ssl
 -rw-r--r--	root/root	usr/share/man/man1/attr.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/avahi-browse.1
+lrwxrwxrwx	root/root	usr/share/man/man1/avahi-browse-domains.1 -> avahi-browse.1
+-rw-r--r--	root/root	usr/share/man/man1/avahi-publish.1
+lrwxrwxrwx	root/root	usr/share/man/man1/avahi-publish-address.1 -> avahi-publish.1
+lrwxrwxrwx	root/root	usr/share/man/man1/avahi-publish-service.1 -> avahi-publish.1
+-rw-r--r--	root/root	usr/share/man/man1/avahi-resolve.1
+lrwxrwxrwx	root/root	usr/share/man/man1/avahi-resolve-address.1 -> avahi-resolve.1
+lrwxrwxrwx	root/root	usr/share/man/man1/avahi-resolve-host-name.1 -> avahi-resolve.1
+-rw-r--r--	root/root	usr/share/man/man1/avahi-set-host-name.1
 -rw-r--r--	root/root	usr/share/man/man1/bash.1
 -rw-r--r--	root/root	usr/share/man/man1/bashbug.1
 -rw-r--r--	root/root	usr/share/man/man1/busctl.1
@@ -5037,9 +5152,12 @@ lrwxrwxrwx	root/root	usr/share/man/man1/dss1.1ssl -> dgst.1ssl
 -rw-r--r--	root/root	usr/share/man/man1/fuser.1
 -rw-r--r--	root/root	usr/share/man/man1/gapplication.1
 -rw-r--r--	root/root	usr/share/man/man1/gawk.1
+-rw-r--r--	root/root	usr/share/man/man1/gcore.1
+-rw-r--r--	root/root	usr/share/man/man1/gdb.1
 -rw-r--r--	root/root	usr/share/man/man1/gdbm_dump.1
 -rw-r--r--	root/root	usr/share/man/man1/gdbm_load.1
 -rw-r--r--	root/root	usr/share/man/man1/gdbmtool.1
+-rw-r--r--	root/root	usr/share/man/man1/gdbserver.1
 -rw-r--r--	root/root	usr/share/man/man1/gdbus.1
 -rw-r--r--	root/root	usr/share/man/man1/gdbus-codegen.1
 -rw-r--r--	root/root	usr/share/man/man1/gendsa.1ssl
@@ -5426,6 +5544,7 @@ lrwxrwxrwx	root/root	usr/share/man/man3/BF_encrypt.3ssl -> blowfish.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/BF_ofb64_encrypt.3ssl -> blowfish.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/BF_options.3ssl -> blowfish.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/BF_set_key.3ssl -> blowfish.3ssl
+-rw-r--r--	root/root	usr/share/man/man3/bindresvport.3t
 -rw-r--r--	root/root	usr/share/man/man3/bio.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/BIO_append_filename.3ssl -> BIO_s_file.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/BIO_callback_ctrl.3ssl -> BIO_ctrl.3ssl
@@ -5869,6 +5988,7 @@ lrwxrwxrwx	root/root	usr/share/man/man3/DES_cbc_cksum.3ssl -> des.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/DES_cfb64_encrypt.3ssl -> des.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/DES_cfb_encrypt.3ssl -> des.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/DES_crypt.3ssl -> des.3ssl
+-rw-r--r--	root/root	usr/share/man/man3/des_crypt.3t
 lrwxrwxrwx	root/root	usr/share/man/man3/DES_ecb2_encrypt.3ssl -> des.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/DES_ecb3_encrypt.3ssl -> des.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/DES_ecb_encrypt.3ssl -> des.3ssl
@@ -6458,11 +6578,15 @@ lrwxrwxrwx	root/root	usr/share/man/man3/getmaxy.3ncurses.gz -> legacy.3ncurses.g
 lrwxrwxrwx	root/root	usr/share/man/man3/getmaxyx.3ncurses.gz -> getyx.3ncurses.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/getmouse.3ncurses.gz -> mouse.3ncurses.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/getmouse_sp.3ncurses.gz -> sp_funcs.3ncurses.gz
+-rw-r--r--	root/root	usr/share/man/man3/getnetconfig.3t
+-rw-r--r--	root/root	usr/share/man/man3/getnetpath.3t
 lrwxrwxrwx	root/root	usr/share/man/man3/getnstr.3ncurses.gz -> getstr.3ncurses.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/getn_wstr.3ncurses.gz -> get_wstr.3ncurses.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/getparx.3ncurses.gz -> legacy.3ncurses.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/getpary.3ncurses.gz -> legacy.3ncurses.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/getparyx.3ncurses.gz -> getyx.3ncurses.gz
+-rw-r--r--	root/root	usr/share/man/man3/getrpcent.3t
+-rw-r--r--	root/root	usr/share/man/man3/getrpcport.3t
 -rw-r--r--	root/root	usr/share/man/man3/getspnam.3
 -rw-r--r--	root/root	usr/share/man/man3/getstr.3ncurses.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/getsyx.3ncurses.gz -> kernel.3ncurses.gz
@@ -7135,6 +7259,18 @@ lrwxrwxrwx	root/root	usr/share/man/man3/RIPEMD160_Update.3ssl -> ripemd.3ssl
 -rw-r--r--	root/root	usr/share/man/man3/ripemd.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/ripoffline.3ncurses.gz -> kernel.3ncurses.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/ripoffline_sp.3ncurses.gz -> sp_funcs.3ncurses.gz
+-rw-r--r--	root/root	usr/share/man/man3/rpc.3t
+-rw-r--r--	root/root	usr/share/man/man3/rpcbind.3t
+-rw-r--r--	root/root	usr/share/man/man3/rpc_clnt_auth.3t
+-rw-r--r--	root/root	usr/share/man/man3/rpc_clnt_calls.3t
+-rw-r--r--	root/root	usr/share/man/man3/rpc_clnt_create.3t
+-rw-r--r--	root/root	usr/share/man/man3/rpc_secure.3t
+-rw-r--r--	root/root	usr/share/man/man3/rpc_soc.3t
+-rw-r--r--	root/root	usr/share/man/man3/rpc_svc_calls.3t
+-rw-r--r--	root/root	usr/share/man/man3/rpc_svc_create.3t
+-rw-r--r--	root/root	usr/share/man/man3/rpc_svc_err.3t
+-rw-r--r--	root/root	usr/share/man/man3/rpc_svc_reg.3t
+-rw-r--r--	root/root	usr/share/man/man3/rpc_xdr.3t
 -rw-r--r--	root/root	usr/share/man/man3/rsa.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/RSA_blinding_off.3ssl -> RSA_blinding_on.3ssl
 -rw-r--r--	root/root	usr/share/man/man3/RSA_blinding_on.3ssl
@@ -7175,6 +7311,7 @@ lrwxrwxrwx	root/root	usr/share/man/man3/RSA_set_ex_data.3ssl -> RSA_get_ex_new_i
 -rw-r--r--	root/root	usr/share/man/man3/RSA_size.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/RSA_verify.3ssl -> RSA_sign.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/RSA_verify_ASN1_OCTET_STRING.3ssl -> RSA_sign_ASN1_OCTET_STRING.3ssl
+-rw-r--r--	root/root	usr/share/man/man3/rtime.3t
 -rw-r--r--	root/root	usr/share/man/man3/rwarray.3am
 lrwxrwxrwx	root/root	usr/share/man/man3/savetty.3ncurses.gz -> kernel.3ncurses.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/savetty_sp.3ncurses.gz -> sp_funcs.3ncurses.gz
@@ -8356,6 +8493,9 @@ lrwxrwxrwx	root/root	usr/share/man/man3/X509_VERIFY_PARAM_set_trust.3ssl -> X509
 drwxr-xr-x	root/root	usr/share/man/man5/
 -rw-r--r--	root/root	usr/share/man/man5/acl.5.gz
 -rw-r--r--	root/root	usr/share/man/man5/attr.5.gz
+-rw-r--r--	root/root	usr/share/man/man5/avahi-daemon.conf.5
+-rw-r--r--	root/root	usr/share/man/man5/avahi.hosts.5
+-rw-r--r--	root/root	usr/share/man/man5/avahi.service.5
 -rw-r--r--	root/root	usr/share/man/man5/binfmt.d.5
 -rw-r--r--	root/root	usr/share/man/man5/config.5ssl
 -rw-r--r--	root/root	usr/share/man/man5/coredump.conf.5
@@ -8365,6 +8505,7 @@ drwxr-xr-x	root/root	usr/share/man/man5/
 -rw-r--r--	root/root	usr/share/man/man5/environment.d.5
 -rw-r--r--	root/root	usr/share/man/man5/faillog.5
 -rw-r--r--	root/root	usr/share/man/man5/fstab.5
+-rw-r--r--	root/root	usr/share/man/man5/gdbinit.5
 -rw-r--r--	root/root	usr/share/man/man5/gshadow.5
 lrwxrwxrwx	root/root	usr/share/man/man5/host.allow.5.gz -> hosts_access.5.gz
 lrwxrwxrwx	root/root	usr/share/man/man5/host.deny.5.gz -> hosts_access.5.gz
@@ -8391,6 +8532,7 @@ lrwxrwxrwx	root/root	usr/share/man/man5/host.deny.5.gz -> hosts_access.5.gz
 -rw-r--r--	root/root	usr/share/man/man5/modules-load.d.5
 -rw-r--r--	root/root	usr/share/man/man5/moduli.5
 -rw-r--r--	root/root	usr/share/man/man5/nanorc.5
+-rw-r--r--	root/root	usr/share/man/man5/netconfig.5
 -rw-r--r--	root/root	usr/share/man/man5/networkd.conf.5
 -rw-r--r--	root/root	usr/share/man/man5/networkd.conf.d.5
 -rw-r--r--	root/root	usr/share/man/man5/os-release.5
@@ -8471,6 +8613,11 @@ drwxr-xr-x	root/root	usr/share/man/man8/
 -rw-r--r--	root/root	usr/share/man/man8/agetty.8
 -rw-r--r--	root/root	usr/share/man/man8/arpd.8
 -rw-r--r--	root/root	usr/share/man/man8/arping.8.gz
+-rw-r--r--	root/root	usr/share/man/man8/avahi-autoipd.8
+-rw-r--r--	root/root	usr/share/man/man8/avahi-autoipd.action.8
+-rw-r--r--	root/root	usr/share/man/man8/avahi-daemon.8
+-rw-r--r--	root/root	usr/share/man/man8/avahi-dnsconfd.8
+-rw-r--r--	root/root	usr/share/man/man8/avahi-dnsconfd.action.8
 -rw-r--r--	root/root	usr/share/man/man8/blkdiscard.8
 -rw-r--r--	root/root	usr/share/man/man8/blkid.8
 -rw-r--r--	root/root	usr/share/man/man8/blkzone.8
@@ -8613,6 +8760,8 @@ drwxr-xr-x	root/root	usr/share/man/man8/
 -rw-r--r--	root/root	usr/share/man/man8/rmt.8
 -rw-r--r--	root/root	usr/share/man/man8/routef.8
 -rw-r--r--	root/root	usr/share/man/man8/routel.8
+-rw-r--r--	root/root	usr/share/man/man8/rpcbind.8
+-rw-r--r--	root/root	usr/share/man/man8/rpcinfo.8
 -rw-r--r--	root/root	usr/share/man/man8/rtacct.8
 -rw-r--r--	root/root	usr/share/man/man8/rtcwake.8
 -rw-r--r--	root/root	usr/share/man/man8/rtmon.8
