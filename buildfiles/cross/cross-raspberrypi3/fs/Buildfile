@@ -12,8 +12,6 @@ depends=(core
          lighttpd
          php
          i2c-tools
-         rpcbind
-         gdb
          avahi)
 
 build() {

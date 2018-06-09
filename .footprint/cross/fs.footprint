@@ -10,8 +10,6 @@ drwxr-xr-x	root/root	etc/avahi/services/
 -rw-r--r--	root/root	etc/avahi/services/sftp-ssh.service
 -rw-r--r--	root/root	etc/avahi/services/ssh.service
 drwxr-xr-x	root/root	etc/binfmt.d/
-drwxr-xr-x	root/root	etc/conf.d/
--rw-r--r--	root/root	etc/conf.d/rpcbind
 drwxr-xr-x	root/root	etc/dbus-1/
 -rw-r--r--	root/root	etc/dbus-1/session.conf
 -rw-r--r--	root/root	etc/dbus-1/system.conf
@@ -52,7 +50,6 @@ drwxr-xr-x	root/root	etc/lighttpd/conf.d/
 drwxr-xr-x	root/root	etc/modules-load.d/
 -rw-r--r--	root/root	etc/modules-load.d/rpi3.conf
 lrwxrwxrwx	root/root	etc/mtab -> /proc/self/mounts
--rw-r--r--	root/root	etc/netconfig
 drwxr-xr-x	root/root	etc/pam.d/
 -rw-r--r--	root/root	etc/pam.d/systemd-user
 -rw-r--r--	root/root	etc/passwd
@@ -2148,12 +2145,9 @@ lrwxrwxrwx	root/root	usr/bin/depmod -> /usr/bin/kmod
 -rwxr-xr-x	root/root	usr/bin/gapplication
 -rwxr-xr-x	root/root	usr/bin/gawk-4.2.1
 hrwxr-xr-x	root/root	usr/bin/gawk link to usr/bin/gawk-4.2.1
--rwxr-xr-x	root/root	usr/bin/gcore
--rwxr-xr-x	root/root	usr/bin/gdb
 -rwxr-xr-x	root/root	usr/bin/gdbm_dump
 -rwxr-xr-x	root/root	usr/bin/gdbm_load
 -rwxr-xr-x	root/root	usr/bin/gdbmtool
--rwxr-xr-x	root/root	usr/bin/gdbserver
 -rwxr-xr-x	root/root	usr/bin/gdbus
 -rwxr-xr-x	root/root	usr/bin/gdbus-codegen
 -r-xr-xr-x	root/root	usr/bin/gencat
@@ -2341,9 +2335,7 @@ lrwxrwxrwx	root/root	usr/bin/reset -> tset
 -rwxr-xr-x	root/root	usr/bin/rm
 -rwxr-xr-x	root/root	usr/bin/rmdir
 lrwxrwxrwx	root/root	usr/bin/rmmod -> /usr/bin/kmod
--rwxr-xr-x	root/root	usr/bin/rpcbind
 -r-xr-xr-x	root/root	usr/bin/rpcgen
--rwxr-xr-x	root/root	usr/bin/rpcinfo
 -rwxr-xr-x	root/root	usr/bin/runcon
 lrwxrwxrwx	root/root	usr/bin/runlevel -> systemctl
 -rwxr-xr-x	root/root	usr/bin/scp
@@ -3035,9 +3027,6 @@ lrwxrwxrwx	root/root	usr/lib/libthread_db.so -> ../../lib/libthread_db.so.1
 -rwxr-xr-x	root/root	usr/lib/libtinfo.so.6.0
 lrwxrwxrwx	root/root	usr/lib/libtinfo.so.6 -> libtinfo.so.6.0
 lrwxrwxrwx	root/root	usr/lib/libtinfo.so -> libtinfo.so.6
--rwxr-xr-x	root/root	usr/lib/libtirpc.so.3.0.0
-lrwxrwxrwx	root/root	usr/lib/libtirpc.so.3 -> libtirpc.so.3.0.0
-lrwxrwxrwx	root/root	usr/lib/libtirpc.so -> libtirpc.so.3.0.0
 -rwxr-xr-x	root/root	usr/lib/libudev.so.1.6.10
 lrwxrwxrwx	root/root	usr/lib/libudev.so.1 -> libudev.so.1.6.10
 lrwxrwxrwx	root/root	usr/lib/libudev.so -> libudev.so.1
@@ -3164,7 +3153,6 @@ drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/libprocps.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/libssl.pc
 -rw-rw-r--	root/root	usr/lib/pkgconfig/libsystemd.pc
--rw-r--r--	root/root	usr/lib/pkgconfig/libtirpc.pc
 -rw-rw-r--	root/root	usr/lib/pkgconfig/libudev.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/libusb-1.0.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/menu.pc
@@ -3332,8 +3320,6 @@ lrwxrwxrwx	root/root	usr/lib/systemd/system/remote-fs.target.wants/var-lib-machi
 -rw-rw-r--	root/root	usr/lib/systemd/system/rescue.target
 drwxr-xr-x	root/root	usr/lib/systemd/system/rescue.target.wants/
 lrwxrwxrwx	root/root	usr/lib/systemd/system/rescue.target.wants/systemd-update-utmp-runlevel.service -> ../systemd-update-utmp-runlevel.service
--rw-r--r--	root/root	usr/lib/systemd/system/rpcbind.service
--rw-r--r--	root/root	usr/lib/systemd/system/rpcbind.socket
 -rw-rw-r--	root/root	usr/lib/systemd/system/rpcbind.target
 lrwxrwxrwx	root/root	usr/lib/systemd/system/runlevel0.target -> poweroff.target
 lrwxrwxrwx	root/root	usr/lib/systemd/system/runlevel1.target -> rescue.target
@@ -3498,7 +3484,6 @@ drwxr-xr-x	root/root	usr/lib/systemd/user-preset/
 drwxr-xr-x	root/root	usr/lib/sysusers.d/
 -rw-rw-r--	root/root	usr/lib/sysusers.d/basic.conf
 -rw-r--r--	root/root	usr/lib/sysusers.d/dbus.conf
--rw-r--r--	root/root	usr/lib/sysusers.d/rpcbind.conf
 -rw-r--r--	root/root	usr/lib/sysusers.d/systemd.conf
 drwxr-xr-x	root/root	usr/lib/tc/
 -rw-r--r--	root/root	usr/lib/tc/experimental.dist
@@ -3513,7 +3498,6 @@ drwxr-xr-x	root/root	usr/lib/tmpfiles.d/
 -rw-r--r--	root/root	usr/lib/tmpfiles.d/etc.conf
 -rw-rw-r--	root/root	usr/lib/tmpfiles.d/home.conf
 -rw-rw-r--	root/root	usr/lib/tmpfiles.d/journal-nocow.conf
--rw-r--r--	root/root	usr/lib/tmpfiles.d/rpcbind.conf
 -rw-r--r--	root/root	usr/lib/tmpfiles.d/systemd.conf
 -rw-rw-r--	root/root	usr/lib/tmpfiles.d/systemd-nologin.conf
 -rw-rw-r--	root/root	usr/lib/tmpfiles.d/systemd-nspawn.conf
@@ -4070,26 +4054,6 @@ drwxr-xr-x	root/root	usr/share/factory/etc/
 drwxrwxr-x	root/root	usr/share/factory/etc/pam.d/
 -rw-rw-r--	root/root	usr/share/factory/etc/pam.d/other
 -rw-rw-r--	root/root	usr/share/factory/etc/pam.d/system-auth
-drwxr-xr-x	root/root	usr/share/gdb/
-drwxr-xr-x	root/root	usr/share/gdb/syscalls/
--rw-r--r--	root/root	usr/share/gdb/syscalls/aarch64-linux.xml
--rw-r--r--	root/root	usr/share/gdb/syscalls/amd64-linux.xml
--rw-r--r--	root/root	usr/share/gdb/syscalls/arm-linux.xml
--rw-r--r--	root/root	usr/share/gdb/syscalls/freebsd.xml
--rw-r--r--	root/root	usr/share/gdb/syscalls/gdb-syscalls.dtd
--rw-r--r--	root/root	usr/share/gdb/syscalls/i386-linux.xml
--rw-r--r--	root/root	usr/share/gdb/syscalls/mips-n32-linux.xml
--rw-r--r--	root/root	usr/share/gdb/syscalls/mips-n64-linux.xml
--rw-r--r--	root/root	usr/share/gdb/syscalls/mips-o32-linux.xml
--rw-r--r--	root/root	usr/share/gdb/syscalls/ppc64-linux.xml
--rw-r--r--	root/root	usr/share/gdb/syscalls/ppc-linux.xml
--rw-r--r--	root/root	usr/share/gdb/syscalls/s390-linux.xml
--rw-r--r--	root/root	usr/share/gdb/syscalls/s390x-linux.xml
--rw-r--r--	root/root	usr/share/gdb/syscalls/sparc64-linux.xml
--rw-r--r--	root/root	usr/share/gdb/syscalls/sparc-linux.xml
-drwxr-xr-x	root/root	usr/share/gdb/system-gdbinit/
--rw-r--r--	root/root	usr/share/gdb/system-gdbinit/elinos.py
--rw-r--r--	root/root	usr/share/gdb/system-gdbinit/wrs-linux.py
 drwxr-xr-x	root/root	usr/share/gettext/
 drwxr-xr-x	root/root	usr/share/gettext/its/
 -rw-r--r--	root/root	usr/share/gettext/its/gschema.its
@@ -5152,12 +5116,9 @@ lrwxrwxrwx	root/root	usr/share/man/man1/dss1.1ssl -> dgst.1ssl
 -rw-r--r--	root/root	usr/share/man/man1/fuser.1
 -rw-r--r--	root/root	usr/share/man/man1/gapplication.1
 -rw-r--r--	root/root	usr/share/man/man1/gawk.1
--rw-r--r--	root/root	usr/share/man/man1/gcore.1
--rw-r--r--	root/root	usr/share/man/man1/gdb.1
 -rw-r--r--	root/root	usr/share/man/man1/gdbm_dump.1
 -rw-r--r--	root/root	usr/share/man/man1/gdbm_load.1
 -rw-r--r--	root/root	usr/share/man/man1/gdbmtool.1
--rw-r--r--	root/root	usr/share/man/man1/gdbserver.1
 -rw-r--r--	root/root	usr/share/man/man1/gdbus.1
 -rw-r--r--	root/root	usr/share/man/man1/gdbus-codegen.1
 -rw-r--r--	root/root	usr/share/man/man1/gendsa.1ssl
@@ -5544,7 +5505,6 @@ lrwxrwxrwx	root/root	usr/share/man/man3/BF_encrypt.3ssl -> blowfish.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/BF_ofb64_encrypt.3ssl -> blowfish.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/BF_options.3ssl -> blowfish.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/BF_set_key.3ssl -> blowfish.3ssl
--rw-r--r--	root/root	usr/share/man/man3/bindresvport.3t
 -rw-r--r--	root/root	usr/share/man/man3/bio.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/BIO_append_filename.3ssl -> BIO_s_file.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/BIO_callback_ctrl.3ssl -> BIO_ctrl.3ssl
@@ -5988,7 +5948,6 @@ lrwxrwxrwx	root/root	usr/share/man/man3/DES_cbc_cksum.3ssl -> des.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/DES_cfb64_encrypt.3ssl -> des.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/DES_cfb_encrypt.3ssl -> des.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/DES_crypt.3ssl -> des.3ssl
--rw-r--r--	root/root	usr/share/man/man3/des_crypt.3t
 lrwxrwxrwx	root/root	usr/share/man/man3/DES_ecb2_encrypt.3ssl -> des.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/DES_ecb3_encrypt.3ssl -> des.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/DES_ecb_encrypt.3ssl -> des.3ssl
@@ -6578,15 +6537,11 @@ lrwxrwxrwx	root/root	usr/share/man/man3/getmaxy.3ncurses.gz -> legacy.3ncurses.g
 lrwxrwxrwx	root/root	usr/share/man/man3/getmaxyx.3ncurses.gz -> getyx.3ncurses.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/getmouse.3ncurses.gz -> mouse.3ncurses.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/getmouse_sp.3ncurses.gz -> sp_funcs.3ncurses.gz
--rw-r--r--	root/root	usr/share/man/man3/getnetconfig.3t
--rw-r--r--	root/root	usr/share/man/man3/getnetpath.3t
 lrwxrwxrwx	root/root	usr/share/man/man3/getnstr.3ncurses.gz -> getstr.3ncurses.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/getn_wstr.3ncurses.gz -> get_wstr.3ncurses.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/getparx.3ncurses.gz -> legacy.3ncurses.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/getpary.3ncurses.gz -> legacy.3ncurses.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/getparyx.3ncurses.gz -> getyx.3ncurses.gz
--rw-r--r--	root/root	usr/share/man/man3/getrpcent.3t
--rw-r--r--	root/root	usr/share/man/man3/getrpcport.3t
 -rw-r--r--	root/root	usr/share/man/man3/getspnam.3
 -rw-r--r--	root/root	usr/share/man/man3/getstr.3ncurses.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/getsyx.3ncurses.gz -> kernel.3ncurses.gz
@@ -7259,18 +7214,6 @@ lrwxrwxrwx	root/root	usr/share/man/man3/RIPEMD160_Update.3ssl -> ripemd.3ssl
 -rw-r--r--	root/root	usr/share/man/man3/ripemd.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/ripoffline.3ncurses.gz -> kernel.3ncurses.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/ripoffline_sp.3ncurses.gz -> sp_funcs.3ncurses.gz
--rw-r--r--	root/root	usr/share/man/man3/rpc.3t
--rw-r--r--	root/root	usr/share/man/man3/rpcbind.3t
--rw-r--r--	root/root	usr/share/man/man3/rpc_clnt_auth.3t
--rw-r--r--	root/root	usr/share/man/man3/rpc_clnt_calls.3t
--rw-r--r--	root/root	usr/share/man/man3/rpc_clnt_create.3t
--rw-r--r--	root/root	usr/share/man/man3/rpc_secure.3t
--rw-r--r--	root/root	usr/share/man/man3/rpc_soc.3t
--rw-r--r--	root/root	usr/share/man/man3/rpc_svc_calls.3t
--rw-r--r--	root/root	usr/share/man/man3/rpc_svc_create.3t
--rw-r--r--	root/root	usr/share/man/man3/rpc_svc_err.3t
--rw-r--r--	root/root	usr/share/man/man3/rpc_svc_reg.3t
--rw-r--r--	root/root	usr/share/man/man3/rpc_xdr.3t
 -rw-r--r--	root/root	usr/share/man/man3/rsa.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/RSA_blinding_off.3ssl -> RSA_blinding_on.3ssl
 -rw-r--r--	root/root	usr/share/man/man3/RSA_blinding_on.3ssl
@@ -7311,7 +7254,6 @@ lrwxrwxrwx	root/root	usr/share/man/man3/RSA_set_ex_data.3ssl -> RSA_get_ex_new_i
 -rw-r--r--	root/root	usr/share/man/man3/RSA_size.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/RSA_verify.3ssl -> RSA_sign.3ssl
 lrwxrwxrwx	root/root	usr/share/man/man3/RSA_verify_ASN1_OCTET_STRING.3ssl -> RSA_sign_ASN1_OCTET_STRING.3ssl
--rw-r--r--	root/root	usr/share/man/man3/rtime.3t
 -rw-r--r--	root/root	usr/share/man/man3/rwarray.3am
 lrwxrwxrwx	root/root	usr/share/man/man3/savetty.3ncurses.gz -> kernel.3ncurses.gz
 lrwxrwxrwx	root/root	usr/share/man/man3/savetty_sp.3ncurses.gz -> sp_funcs.3ncurses.gz
@@ -8505,7 +8447,6 @@ drwxr-xr-x	root/root	usr/share/man/man5/
 -rw-r--r--	root/root	usr/share/man/man5/environment.d.5
 -rw-r--r--	root/root	usr/share/man/man5/faillog.5
 -rw-r--r--	root/root	usr/share/man/man5/fstab.5
--rw-r--r--	root/root	usr/share/man/man5/gdbinit.5
 -rw-r--r--	root/root	usr/share/man/man5/gshadow.5
 lrwxrwxrwx	root/root	usr/share/man/man5/host.allow.5.gz -> hosts_access.5.gz
 lrwxrwxrwx	root/root	usr/share/man/man5/host.deny.5.gz -> hosts_access.5.gz
@@ -8532,7 +8473,6 @@ lrwxrwxrwx	root/root	usr/share/man/man5/host.deny.5.gz -> hosts_access.5.gz
 -rw-r--r--	root/root	usr/share/man/man5/modules-load.d.5
 -rw-r--r--	root/root	usr/share/man/man5/moduli.5
 -rw-r--r--	root/root	usr/share/man/man5/nanorc.5
--rw-r--r--	root/root	usr/share/man/man5/netconfig.5
 -rw-r--r--	root/root	usr/share/man/man5/networkd.conf.5
 -rw-r--r--	root/root	usr/share/man/man5/networkd.conf.d.5
 -rw-r--r--	root/root	usr/share/man/man5/os-release.5
@@ -8760,8 +8700,6 @@ drwxr-xr-x	root/root	usr/share/man/man8/
 -rw-r--r--	root/root	usr/share/man/man8/rmt.8
 -rw-r--r--	root/root	usr/share/man/man8/routef.8
 -rw-r--r--	root/root	usr/share/man/man8/routel.8
--rw-r--r--	root/root	usr/share/man/man8/rpcbind.8
--rw-r--r--	root/root	usr/share/man/man8/rpcinfo.8
 -rw-r--r--	root/root	usr/share/man/man8/rtacct.8
 -rw-r--r--	root/root	usr/share/man/man8/rtcwake.8
 -rw-r--r--	root/root	usr/share/man/man8/rtmon.8
