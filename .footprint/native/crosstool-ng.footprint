@@ -879,7 +879,7 @@ dr-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/
 dr-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/bin/
 -r-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/bin/catchsegv
 -r-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/bin/gencat
-hr-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/bin/getconf link to armv8-rpi3-linux-gnueabi/sysroot/usr/libexec/getconf/XBS5_ILP32_OFF32
+-r-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/bin/getconf
 -r-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/bin/getent
 -r-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/bin/iconv
 -r-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/bin/ldd
@@ -2244,12 +2244,12 @@ dr-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/lib/audit/
 -r--r--r--	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/lib/crtn.o
 dr-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/libexec/
 dr-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/libexec/getconf/
-hr-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/libexec/getconf/POSIX_V6_ILP32_OFF32 link to armv8-rpi3-linux-gnueabi/sysroot/usr/libexec/getconf/XBS5_ILP32_OFF32
-hr-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/libexec/getconf/POSIX_V6_ILP32_OFFBIG link to armv8-rpi3-linux-gnueabi/sysroot/usr/libexec/getconf/XBS5_ILP32_OFF32
-hr-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/libexec/getconf/POSIX_V7_ILP32_OFF32 link to armv8-rpi3-linux-gnueabi/sysroot/usr/libexec/getconf/XBS5_ILP32_OFF32
-hr-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/libexec/getconf/POSIX_V7_ILP32_OFFBIG link to armv8-rpi3-linux-gnueabi/sysroot/usr/libexec/getconf/XBS5_ILP32_OFF32
--r-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/libexec/getconf/XBS5_ILP32_OFF32
-hr-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/libexec/getconf/XBS5_ILP32_OFFBIG link to armv8-rpi3-linux-gnueabi/sysroot/usr/libexec/getconf/XBS5_ILP32_OFF32
+hr-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/libexec/getconf/POSIX_V6_ILP32_OFF32 link to armv8-rpi3-linux-gnueabi/sysroot/usr/bin/getconf
+hr-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/libexec/getconf/POSIX_V6_ILP32_OFFBIG link to armv8-rpi3-linux-gnueabi/sysroot/usr/bin/getconf
+hr-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/libexec/getconf/POSIX_V7_ILP32_OFF32 link to armv8-rpi3-linux-gnueabi/sysroot/usr/bin/getconf
+hr-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/libexec/getconf/POSIX_V7_ILP32_OFFBIG link to armv8-rpi3-linux-gnueabi/sysroot/usr/bin/getconf
+hr-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/libexec/getconf/XBS5_ILP32_OFF32 link to armv8-rpi3-linux-gnueabi/sysroot/usr/bin/getconf
+hr-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/libexec/getconf/XBS5_ILP32_OFFBIG link to armv8-rpi3-linux-gnueabi/sysroot/usr/bin/getconf
 dr-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/lib/gconv/
 -r-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/lib/gconv/ANSI_X3.110.so
 -r-xr-xr-x	root/root	armv8-rpi3-linux-gnueabi/sysroot/usr/lib/gconv/ARMSCII-8.so
@@ -2557,22 +2557,22 @@ dr-xr-xr-x	root/root	bin/
 -r-xr-xr-x	root/root	bin/armv8-rpi3-linux-gnueabi-addr2line
 hr-xr-xr-x	root/root	bin/armv8-rpi3-linux-gnueabi-ar link to armv8-rpi3-linux-gnueabi/bin/ar
 hr-xr-xr-x	root/root	bin/armv8-rpi3-linux-gnueabi-as link to armv8-rpi3-linux-gnueabi/bin/as
--r-xr-xr-x	root/root	bin/armv8-rpi3-linux-gnueabi-c++
 lrwxrwxrwx	root/root	bin/armv8-rpi3-linux-gnueabi-cc -> armv8-rpi3-linux-gnueabi-gcc
 -r-xr-xr-x	root/root	bin/armv8-rpi3-linux-gnueabi-c++filt
+hr-xr-xr-x	root/root	bin/armv8-rpi3-linux-gnueabi-c++ link to bin/armv8-rpi3-linux-gnueabi-g++
 -r-xr-xr-x	root/root	bin/armv8-rpi3-linux-gnueabi-cpp
 -r-xr-xr-x	root/root	bin/armv8-rpi3-linux-gnueabi-ct-ng.config
 -r-xr-xr-x	root/root	bin/armv8-rpi3-linux-gnueabi-dwp
 -r-xr-xr-x	root/root	bin/armv8-rpi3-linux-gnueabi-elfedit
--r-xr-xr-x	root/root	bin/armv8-rpi3-linux-gnueabi-gcc
-hr-xr-xr-x	root/root	bin/armv8-rpi3-linux-gnueabi-gcc-6.3.0 link to bin/armv8-rpi3-linux-gnueabi-gcc
+-r-xr-xr-x	root/root	bin/armv8-rpi3-linux-gnueabi-g++
+-r-xr-xr-x	root/root	bin/armv8-rpi3-linux-gnueabi-gcc-6.3.0
 -r-xr-xr-x	root/root	bin/armv8-rpi3-linux-gnueabi-gcc-ar
+hr-xr-xr-x	root/root	bin/armv8-rpi3-linux-gnueabi-gcc link to bin/armv8-rpi3-linux-gnueabi-gcc-6.3.0
 -r-xr-xr-x	root/root	bin/armv8-rpi3-linux-gnueabi-gcc-nm
 -r-xr-xr-x	root/root	bin/armv8-rpi3-linux-gnueabi-gcc-ranlib
 -r-xr-xr-x	root/root	bin/armv8-rpi3-linux-gnueabi-gcov
 -r-xr-xr-x	root/root	bin/armv8-rpi3-linux-gnueabi-gcov-tool
 -r-xr-xr-x	root/root	bin/armv8-rpi3-linux-gnueabi-gdb
-hr-xr-xr-x	root/root	bin/armv8-rpi3-linux-gnueabi-g++ link to bin/armv8-rpi3-linux-gnueabi-c++
 -r-xr-xr-x	root/root	bin/armv8-rpi3-linux-gnueabi-gprof
 -r-xr-xr-x	root/root	bin/armv8-rpi3-linux-gnueabi-ld
 hr-xr-xr-x	root/root	bin/armv8-rpi3-linux-gnueabi-ld.bfd link to armv8-rpi3-linux-gnueabi/bin/ld.bfd
