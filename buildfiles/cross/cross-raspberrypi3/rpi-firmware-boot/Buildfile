@@ -13,7 +13,7 @@ build() {
 
     mkdir -p $OUTPUT/boot
     cp bootcode.bin $OUTPUT/boot
-    cp start.elf $OUTPUT/boot
+    cp *.{elf,dat,bin} $OUTPUT/boot
     cp $SRC/config.txt $OUTPUT/boot
     cp $SRC/cmdline.txt $OUTPUT/boot
 }

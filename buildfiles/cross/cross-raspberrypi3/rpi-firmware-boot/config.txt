@@ -3,3 +3,5 @@ arm_freq=1200
 core_freq=400
 enable_uart=1
 dtparam=i2c_arm=on
+total_mem=1024
+gpu_mem=32
