@@ -19,6 +19,5 @@ drwxr-xr-x	root/root	usr/lib/pkgconfig/
 drwxr-xr-x	root/root	usr/share/
 drwxr-xr-x	root/root	usr/share/doc/
 drwxr-xr-x	root/root	usr/share/doc/libdaemon/
--rw-r--r--	root/root	usr/share/doc/libdaemon/README
 -rw-r--r--	root/root	usr/share/doc/libdaemon/README.html
 -rw-r--r--	root/root	usr/share/doc/libdaemon/style.css

@@ -1172,8 +1172,8 @@ lrwxrwxrwx	root/root	usr/share/terminfo/a/att4410v1 -> att5410v1
 -rw-r--r--	root/root	usr/share/terminfo/a/att4410v1-w
 lrwxrwxrwx	root/root	usr/share/terminfo/a/att4410-w -> att5410-w
 -rw-r--r--	root/root	usr/share/terminfo/a/att4415
--rw-r--r--	root/root	usr/share/terminfo/a/att4415-nl
 -rw-r--r--	root/root	usr/share/terminfo/a/att4415+nl
+-rw-r--r--	root/root	usr/share/terminfo/a/att4415-nl
 -rw-r--r--	root/root	usr/share/terminfo/a/att4415-rv
 -rw-r--r--	root/root	usr/share/terminfo/a/att4415-rv-nl
 -rw-r--r--	root/root	usr/share/terminfo/a/att4415-w
@@ -1207,8 +1207,8 @@ lrwxrwxrwx	root/root	usr/share/terminfo/a/att5418-w -> att4418-w
 -rw-r--r--	root/root	usr/share/terminfo/a/att5420_2
 -rw-r--r--	root/root	usr/share/terminfo/a/att5420_2-w
 lrwxrwxrwx	root/root	usr/share/terminfo/a/att5420 -> att4415
-lrwxrwxrwx	root/root	usr/share/terminfo/a/att5420-nl -> att4415-nl
 lrwxrwxrwx	root/root	usr/share/terminfo/a/att5420+nl -> att4415+nl
+lrwxrwxrwx	root/root	usr/share/terminfo/a/att5420-nl -> att4415-nl
 lrwxrwxrwx	root/root	usr/share/terminfo/a/att5420-rv -> att4415-rv
 lrwxrwxrwx	root/root	usr/share/terminfo/a/att5420-rv-nl -> att4415-rv-nl
 lrwxrwxrwx	root/root	usr/share/terminfo/a/att5420-w -> att4415-w
@@ -1465,8 +1465,8 @@ lrwxrwxrwx	root/root	usr/share/terminfo/d/d216+ -> d216-unix
 -rw-r--r--	root/root	usr/share/terminfo/d/d216-dg
 lrwxrwxrwx	root/root	usr/share/terminfo/d/d216+dg -> d216-dg
 lrwxrwxrwx	root/root	usr/share/terminfo/d/d216e+ -> d216-unix
-lrwxrwxrwx	root/root	usr/share/terminfo/d/d216e-dg -> d216-dg
 lrwxrwxrwx	root/root	usr/share/terminfo/d/d216e+dg -> d216-dg
+lrwxrwxrwx	root/root	usr/share/terminfo/d/d216e-dg -> d216-dg
 lrwxrwxrwx	root/root	usr/share/terminfo/d/d216e-unix -> d216-unix
 -rw-r--r--	root/root	usr/share/terminfo/d/d216-unix
 -rw-r--r--	root/root	usr/share/terminfo/d/d216-unix-25
@@ -1555,8 +1555,8 @@ lrwxrwxrwx	root/root	usr/share/terminfo/d/d461-dg -> d410-dg
 lrwxrwxrwx	root/root	usr/share/terminfo/d/d461-w -> d410-w
 lrwxrwxrwx	root/root	usr/share/terminfo/d/d462+25 -> d412-unix-25
 lrwxrwxrwx	root/root	usr/share/terminfo/d/d462+ -> d412-unix
-lrwxrwxrwx	root/root	usr/share/terminfo/d/d462-dg -> d412-dg
 lrwxrwxrwx	root/root	usr/share/terminfo/d/d462+dg -> d412-dg
+lrwxrwxrwx	root/root	usr/share/terminfo/d/d462-dg -> d412-dg
 lrwxrwxrwx	root/root	usr/share/terminfo/d/d462e-dg -> d412-dg
 lrwxrwxrwx	root/root	usr/share/terminfo/d/d462+s -> d412-unix-s
 lrwxrwxrwx	root/root	usr/share/terminfo/d/d462+sr -> d412-unix-sr
@@ -1845,10 +1845,10 @@ lrwxrwxrwx	root/root	usr/share/terminfo/g/guru-33-s -> guru-s
 -rw-r--r--	root/root	usr/share/terminfo/g/guru-76-w-s
 lrwxrwxrwx	root/root	usr/share/terminfo/g/guru-lp -> guru-76-lp
 -rw-r--r--	root/root	usr/share/terminfo/g/guru-nctxt
--rw-r--r--	root/root	usr/share/terminfo/g/guru-rv
 -rw-r--r--	root/root	usr/share/terminfo/g/guru+rv
--rw-r--r--	root/root	usr/share/terminfo/g/guru-s
+-rw-r--r--	root/root	usr/share/terminfo/g/guru-rv
 -rw-r--r--	root/root	usr/share/terminfo/g/guru+s
+-rw-r--r--	root/root	usr/share/terminfo/g/guru-s
 lrwxrwxrwx	root/root	usr/share/terminfo/g/guru+unk -> guru
 drwxr-xr-x	root/root	usr/share/terminfo/h/
 lrwxrwxrwx	root/root	usr/share/terminfo/h/h-100bw -> ../z/z100bw
@@ -1976,8 +1976,8 @@ lrwxrwxrwx	root/root	usr/share/terminfo/h/hpex2 -> hp2
 lrwxrwxrwx	root/root	usr/share/terminfo/h/hp -> hpgeneric
 -rw-r--r--	root/root	usr/share/terminfo/h/hp+labels
 -rw-r--r--	root/root	usr/share/terminfo/h/hp+pfk+arrows
--rw-r--r--	root/root	usr/share/terminfo/h/hp+pfk-cr
 -rw-r--r--	root/root	usr/share/terminfo/h/hp+pfk+cr
+-rw-r--r--	root/root	usr/share/terminfo/h/hp+pfk-cr
 -rw-r--r--	root/root	usr/share/terminfo/h/hp+printer
 -rw-r--r--	root/root	usr/share/terminfo/h/hpsub
 -rw-r--r--	root/root	usr/share/terminfo/h/hpterm
@@ -2038,8 +2038,8 @@ lrwxrwxrwx	root/root	usr/share/terminfo/i/ibmapa8 -> ibmapa8c
 -rw-r--r--	root/root	usr/share/terminfo/i/ibmega-c
 -rw-r--r--	root/root	usr/share/terminfo/i/ibmmono
 lrwxrwxrwx	root/root	usr/share/terminfo/i/ibmmpel-c -> ibm5081-c
--rw-r--r--	root/root	usr/share/terminfo/i/ibmpc
 -rw-r--r--	root/root	usr/share/terminfo/i/ibm-pc
+-rw-r--r--	root/root	usr/share/terminfo/i/ibmpc
 -rw-r--r--	root/root	usr/share/terminfo/i/ibmpc3
 lrwxrwxrwx	root/root	usr/share/terminfo/i/ibmpc3r -> ../c/cons25r
 lrwxrwxrwx	root/root	usr/share/terminfo/i/ibmpc3r-mono -> ../c/cons25r-m
@@ -2321,8 +2321,8 @@ lrwxrwxrwx	root/root	usr/share/terminfo/n/nec -> nec5520
 -rw-r--r--	root/root	usr/share/terminfo/n/newhpkeyboard
 -rw-r--r--	root/root	usr/share/terminfo/n/news28
 lrwxrwxrwx	root/root	usr/share/terminfo/n/news28-a -> news29
--rw-r--r--	root/root	usr/share/terminfo/n/news29
 -rw-r--r--	root/root	usr/share/terminfo/n/news-29
+-rw-r--r--	root/root	usr/share/terminfo/n/news29
 -rw-r--r--	root/root	usr/share/terminfo/n/news-29-euc
 -rw-r--r--	root/root	usr/share/terminfo/n/news-29-sjis
 lrwxrwxrwx	root/root	usr/share/terminfo/n/news31-a -> nwp513-a
@@ -2354,15 +2354,15 @@ lrwxrwxrwx	root/root	usr/share/terminfo/n/news-o -> nwp512-o
 -rw-r--r--	root/root	usr/share/terminfo/n/nsterm
 -rw-r--r--	root/root	usr/share/terminfo/n/nsterm-16color
 -rw-r--r--	root/root	usr/share/terminfo/n/nsterm-256color
--rw-r--r--	root/root	usr/share/terminfo/n/nsterm-7
 -rw-r--r--	root/root	usr/share/terminfo/n/nsterm+7
+-rw-r--r--	root/root	usr/share/terminfo/n/nsterm-7
 -rw-r--r--	root/root	usr/share/terminfo/n/nsterm-7-c
 lrwxrwxrwx	root/root	usr/share/terminfo/n/nsterm-7-c-s -> nsterm-c-s-7
 lrwxrwxrwx	root/root	usr/share/terminfo/n/nsterm-7-m -> nsterm-m-7
 lrwxrwxrwx	root/root	usr/share/terminfo/n/nsterm-7-m-s -> nsterm-m-s-7
 lrwxrwxrwx	root/root	usr/share/terminfo/n/nsterm-7-s -> nsterm-s-7
--rw-r--r--	root/root	usr/share/terminfo/n/nsterm-acs
 -rw-r--r--	root/root	usr/share/terminfo/n/nsterm+acs
+-rw-r--r--	root/root	usr/share/terminfo/n/nsterm-acs
 lrwxrwxrwx	root/root	usr/share/terminfo/n/nsterm-acs-c -> nsterm-c-acs
 lrwxrwxrwx	root/root	usr/share/terminfo/n/nsterm-acs-c-s -> nsterm-c-s-acs
 lrwxrwxrwx	root/root	usr/share/terminfo/n/nsterm-acs-m -> nsterm-m-acs
@@ -2372,8 +2372,8 @@ lrwxrwxrwx	root/root	usr/share/terminfo/n/nsterm-acs-s -> nsterm-s-acs
 -rw-r--r--	root/root	usr/share/terminfo/n/nsterm-build326
 -rw-r--r--	root/root	usr/share/terminfo/n/nsterm-build343
 -rw-r--r--	root/root	usr/share/terminfo/n/nsterm-build361
--rw-r--r--	root/root	usr/share/terminfo/n/nsterm-c
 -rw-r--r--	root/root	usr/share/terminfo/n/nsterm+c
+-rw-r--r--	root/root	usr/share/terminfo/n/nsterm-c
 -rw-r--r--	root/root	usr/share/terminfo/n/nsterm+c41
 lrwxrwxrwx	root/root	usr/share/terminfo/n/nsterm-c-7 -> nsterm-7-c
 -rw-r--r--	root/root	usr/share/terminfo/n/nsterm-c-acs
@@ -2388,8 +2388,8 @@ lrwxrwxrwx	root/root	usr/share/terminfo/n/nsterm-c-7 -> nsterm-7-c
 -rw-r--r--	root/root	usr/share/terminfo/n/nsterm-m-s-7
 -rw-r--r--	root/root	usr/share/terminfo/n/nsterm-m-s-acs
 -rw-r--r--	root/root	usr/share/terminfo/n/nsterm-old
--rw-r--r--	root/root	usr/share/terminfo/n/nsterm-s
 -rw-r--r--	root/root	usr/share/terminfo/n/nsterm+s
+-rw-r--r--	root/root	usr/share/terminfo/n/nsterm-s
 -rw-r--r--	root/root	usr/share/terminfo/n/nsterm-s-7
 -rw-r--r--	root/root	usr/share/terminfo/n/nsterm-s-acs
 lrwxrwxrwx	root/root	usr/share/terminfo/n/ntconsole-100-nti -> ../o/opennt-100-nti
@@ -2853,8 +2853,8 @@ lrwxrwxrwx	root/root	usr/share/terminfo/t/tek4012 -> tek
 -rw-r--r--	root/root	usr/share/terminfo/t/tek4025-17-ws
 -rw-r--r--	root/root	usr/share/terminfo/t/tek4025a
 -rw-r--r--	root/root	usr/share/terminfo/t/tek4025-cr
--rw-r--r--	root/root	usr/share/terminfo/t/tek4025ex
 -rw-r--r--	root/root	usr/share/terminfo/t/tek4025-ex
+-rw-r--r--	root/root	usr/share/terminfo/t/tek4025ex
 lrwxrwxrwx	root/root	usr/share/terminfo/t/tek4025 -> tek4024
 lrwxrwxrwx	root/root	usr/share/terminfo/t/tek4027-ex -> tek4025-ex
 lrwxrwxrwx	root/root	usr/share/terminfo/t/tek4027 -> tek4024
@@ -2946,8 +2946,8 @@ lrwxrwxrwx	root/root	usr/share/terminfo/t/tty5410v1 -> ../a/att5410v1
 lrwxrwxrwx	root/root	usr/share/terminfo/t/tty5410v1-w -> ../a/att4410v1-w
 lrwxrwxrwx	root/root	usr/share/terminfo/t/tty5410-w -> ../a/att5410-w
 lrwxrwxrwx	root/root	usr/share/terminfo/t/tty5420 -> ../a/att4415
-lrwxrwxrwx	root/root	usr/share/terminfo/t/tty5420-nl -> ../a/att4415-nl
 lrwxrwxrwx	root/root	usr/share/terminfo/t/tty5420+nl -> ../a/att4415+nl
+lrwxrwxrwx	root/root	usr/share/terminfo/t/tty5420-nl -> ../a/att4415-nl
 lrwxrwxrwx	root/root	usr/share/terminfo/t/tty5420-rv -> ../a/att4415-rv
 lrwxrwxrwx	root/root	usr/share/terminfo/t/tty5420-rv-nl -> ../a/att4415-rv-nl
 lrwxrwxrwx	root/root	usr/share/terminfo/t/tty5420-w -> ../a/att4415-w
@@ -2969,14 +2969,14 @@ lrwxrwxrwx	root/root	usr/share/terminfo/t/ttydmd -> ../a/att5620
 -rw-r--r--	root/root	usr/share/terminfo/t/tvi910+
 -rw-r--r--	root/root	usr/share/terminfo/t/tvi912
 -rw-r--r--	root/root	usr/share/terminfo/t/tvi912b
--rw-r--r--	root/root	usr/share/terminfo/t/tvi912b-2p
 -rw-r--r--	root/root	usr/share/terminfo/t/tvi912b+2p
+-rw-r--r--	root/root	usr/share/terminfo/t/tvi912b-2p
 -rw-r--r--	root/root	usr/share/terminfo/t/tvi912b-2p-mc
 -rw-r--r--	root/root	usr/share/terminfo/t/tvi912b-2p-p
 -rw-r--r--	root/root	usr/share/terminfo/t/tvi912b-2p-unk
 -rw-r--r--	root/root	usr/share/terminfo/t/tvi912b+dim
--rw-r--r--	root/root	usr/share/terminfo/t/tvi912b-mc
 -rw-r--r--	root/root	usr/share/terminfo/t/tvi912b+mc
+-rw-r--r--	root/root	usr/share/terminfo/t/tvi912b-mc
 lrwxrwxrwx	root/root	usr/share/terminfo/t/tvi912b-mc-2p -> tvi912b-2p-mc
 lrwxrwxrwx	root/root	usr/share/terminfo/t/tvi912b-mc-vb -> tvi912b-vb-mc
 -rw-r--r--	root/root	usr/share/terminfo/t/tvi912b-p
@@ -2986,8 +2986,8 @@ lrwxrwxrwx	root/root	usr/share/terminfo/t/tvi912b-p-vb -> tvi912b-vb-p
 -rw-r--r--	root/root	usr/share/terminfo/t/tvi912b-unk
 lrwxrwxrwx	root/root	usr/share/terminfo/t/tvi912b-unk-2p -> tvi912b-2p-unk
 lrwxrwxrwx	root/root	usr/share/terminfo/t/tvi912b-unk-vb -> tvi912b-vb-unk
--rw-r--r--	root/root	usr/share/terminfo/t/tvi912b-vb
 -rw-r--r--	root/root	usr/share/terminfo/t/tvi912b+vb
+-rw-r--r--	root/root	usr/share/terminfo/t/tvi912b-vb
 -rw-r--r--	root/root	usr/share/terminfo/t/tvi912b-vb-mc
 -rw-r--r--	root/root	usr/share/terminfo/t/tvi912b-vb-p
 -rw-r--r--	root/root	usr/share/terminfo/t/tvi912b-vb-unk
@@ -3193,8 +3193,8 @@ lrwxrwxrwx	root/root	usr/share/terminfo/v/vt300-w -> vt320-w
 -rw-r--r--	root/root	usr/share/terminfo/v/vt320
 -rw-r--r--	root/root	usr/share/terminfo/v/vt320-k3
 -rw-r--r--	root/root	usr/share/terminfo/v/vt320-k311
--rw-r--r--	root/root	usr/share/terminfo/v/vt320nam
 -rw-r--r--	root/root	usr/share/terminfo/v/vt320-nam
+-rw-r--r--	root/root	usr/share/terminfo/v/vt320nam
 -rw-r--r--	root/root	usr/share/terminfo/v/vt320-w
 -rw-r--r--	root/root	usr/share/terminfo/v/vt320-w-nam
 lrwxrwxrwx	root/root	usr/share/terminfo/v/vt330 -> vt340
@@ -3487,50 +3487,50 @@ lrwxrwxrwx	root/root	usr/share/terminfo/X/X-hpterm -> ../h/hpterm
 -rw-r--r--	root/root	usr/share/terminfo/x/xiterm
 lrwxrwxrwx	root/root	usr/share/terminfo/x/xl83 -> ../c/cyb83
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc
--rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-100x37
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc+100x37
+-rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-100x37
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-100x37-m
--rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-112x37
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc+112x37
+-rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-112x37
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-112x37-m
--rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-128x40
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc+128x40
+-rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-128x40
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-128x40-m
--rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-128x48
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc+128x48
+-rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-128x48
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-128x48-m
--rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-144x48
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc+144x48
+-rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-144x48
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-144x48-m
--rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-160x64
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc+160x64
+-rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-160x64
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-160x64-m
--rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-200x64
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc+200x64
+-rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-200x64
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-200x64-m
--rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-200x75
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc+200x75
+-rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-200x75
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-200x75-m
--rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-256x96
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc+256x96
+-rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-256x96
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-256x96-m
--rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-80x25
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc+80x25
+-rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-80x25
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-80x25-m
--rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-80x30
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc+80x30
+-rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-80x30
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-80x30-m
--rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-90x30
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc+90x30
+-rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-90x30
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-90x30-m
--rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-b
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc+b
+-rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-b
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc+basic
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc+c
--rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-f
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc+f
--rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-f2
+-rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-f
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc+f2
+-rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-f2
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-m
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-m-b
 -rw-r--r--	root/root	usr/share/terminfo/x/xnuppc-m-f
@@ -3544,11 +3544,11 @@ lrwxrwxrwx	root/root	usr/share/terminfo/x/xl83 -> ../c/cyb83
 -rw-r--r--	root/root	usr/share/terminfo/x/xterm-1006
 -rw-r--r--	root/root	usr/share/terminfo/x/xterm-16color
 -rw-r--r--	root/root	usr/share/terminfo/x/xterm-24
--rw-r--r--	root/root	usr/share/terminfo/x/xterm-256color
 -rw-r--r--	root/root	usr/share/terminfo/x/xterm+256color
+-rw-r--r--	root/root	usr/share/terminfo/x/xterm-256color
 -rw-r--r--	root/root	usr/share/terminfo/x/xterm+256setaf
--rw-r--r--	root/root	usr/share/terminfo/x/xterm-88color
 -rw-r--r--	root/root	usr/share/terminfo/x/xterm+88color
+-rw-r--r--	root/root	usr/share/terminfo/x/xterm-88color
 -rw-r--r--	root/root	usr/share/terminfo/x/xterm-8bit
 -rw-r--r--	root/root	usr/share/terminfo/x/xterm+app
 -rw-r--r--	root/root	usr/share/terminfo/x/xterm-basic
@@ -3561,8 +3561,8 @@ lrwxrwxrwx	root/root	usr/share/terminfo/x/xl83 -> ../c/cyb83
 -rw-r--r--	root/root	usr/share/terminfo/x/xtermm
 -rw-r--r--	root/root	usr/share/terminfo/x/xterm-new
 -rw-r--r--	root/root	usr/share/terminfo/x/xterm-nic
--rw-r--r--	root/root	usr/share/terminfo/x/xterm-noapp
 -rw-r--r--	root/root	usr/share/terminfo/x/xterm+noapp
+-rw-r--r--	root/root	usr/share/terminfo/x/xterm-noapp
 -rw-r--r--	root/root	usr/share/terminfo/x/xterm-old
 -rw-r--r--	root/root	usr/share/terminfo/x/xterm+pcc0
 -rw-r--r--	root/root	usr/share/terminfo/x/xterm+pcc1
@@ -3592,12 +3592,12 @@ lrwxrwxrwx	root/root	usr/share/terminfo/x/xterms -> xterm-24
 -rw-r--r--	root/root	usr/share/terminfo/x/xterm-vt220
 -rw-r--r--	root/root	usr/share/terminfo/x/xterm-vt52
 -rw-r--r--	root/root	usr/share/terminfo/x/xterm+vt+edit
--rw-r--r--	root/root	usr/share/terminfo/x/xterm-x10mouse
 -rw-r--r--	root/root	usr/share/terminfo/x/xterm+x10mouse
--rw-r--r--	root/root	usr/share/terminfo/x/xterm-x11hilite
+-rw-r--r--	root/root	usr/share/terminfo/x/xterm-x10mouse
 -rw-r--r--	root/root	usr/share/terminfo/x/xterm+x11hilite
--rw-r--r--	root/root	usr/share/terminfo/x/xterm-x11mouse
+-rw-r--r--	root/root	usr/share/terminfo/x/xterm-x11hilite
 -rw-r--r--	root/root	usr/share/terminfo/x/xterm+x11mouse
+-rw-r--r--	root/root	usr/share/terminfo/x/xterm-x11mouse
 -rw-r--r--	root/root	usr/share/terminfo/x/xterm-xf86-v32
 -rw-r--r--	root/root	usr/share/terminfo/x/xterm-xf86-v33
 -rw-r--r--	root/root	usr/share/terminfo/x/xterm-xf86-v333
